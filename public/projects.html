@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Side Projects — Kevin</title>
+  <meta name="description" content="Side projects Kevin — programmer side-hustle, CK staff.">
+  <script src="https://cdn.CSS utilitycss.com"></script>
+  <script>
+    CSS utility.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Instrument Sans"', 'Inter', 'system-ui', 'sans-serif'],
+            display: ['"Fraunces"', 'serif'],
+          },
+          colors: {
+            paper: '#faf9f7',
+            ink: '#1a1a1a',
+            mute: '#6b6b6b',
+            line: '#e6e3df'
+          }
+        }
+      }
+    }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Instrument+Sans:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    body{ -webkit-font-smoothing:antialiased }
+    ::selection{background:#1a1a1a;color:#faf9f7}
+    .dark ::selection{background:#faf9f7;color:#1a1a1a}
+    .hairline{border-color:#e6e3df}.dark .hairline{border-color:#2a2a2a}
+  </style>
+  <script>
+    if (localStorage.theme === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+      document.documentElement.classList.add('dark')
+    }
+  </script>
+  <link rel="stylesheet" href="/output.css">
+</head>
+<body class="bg-paper text-ink dark:bg-[#141414] dark:text-[#e9e6e2] font-sans">
+  <header class="max-w-[720px] mx-auto px-6 md:px-0 pt-10 md:pt-16 pb-8">
+    <div class="flex items-center justify-between">
+      <a href="/" class="text-[18px] tracking-tight font-[500]">kevin.</a>
+            <nav class="flex items-center gap-5 md:gap-6 text-[14px] text-mute dark:text-[#a7a39d]">
+        <a href="/#tentang" class="hover:text-ink dark:hover:text-[#e9e6e2]">hover:text-ink dark:hover:text-[#e9e6e2]</a>
+        <a href="/jurnal" class="text-ink dark:text-[#e9e6e2]">Jurnal</a>
+        <a href="/rig" class="hover:text-ink dark:hover:text-[#e9e6e2]">Rig</a>
+        <a href="/gallery" class="hover:text-ink dark:hover:text-[#e9e6e2]">Gallery</a>
+        <a href="/#kontak" class="hover:text-ink dark:hover:text-[#e9e6e2]">Kontak</a>
+        <button id="themeToggle" class="ml-1 w-8 h-8 rounded-full border hairline flex items-center justify-center text-[11px]">○</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="max-w-[720px] mx-auto px-6 md:px-0 pb-24">
+    <p class="text-[13px] text-mute dark:text-[#a7a39d] mb-4">/jurnal — side-hustle archive</p>
+    <h1 class="font-display text-[40px] md:text-[54px] leading-[1.05] font-[300]">Side Projects</h1>
+    <p class="mt-4 text-[17px] text-[#3a3a3a] dark:text-[#c5c2bc] max-w-[520px] leading-relaxed">
+      Semua yang saya build habis shift CK, 19.30 – 23.00. 
+      Fokus ke tools retail, automasi, dan web app kecil yang kepakai beneran.
+    </p>
+
+    <!-- filter tags -->
+    <div class="mt-8 flex flex-wrap gap-2 text-[12px]">
+      <span class="px-3 py-1 rounded-full bg-black/[0.05] dark:bg-white/[0.07]">All (6)</span>
+      <button class="px-3 py-1 rounded-full border hairline text-mute">JavaScript backend</button>
+      <button class="px-3 py-1 rounded-full border hairline text-mute">CSS utility</button>
+      <button class="px-3 py-1 rounded-full border hairline text-mute">Retail tools</button>
+      <button class="px-3 py-1 rounded-full border hairline text-mute">Freelance</button>
+    </div>
+
+    <!-- Project list detailed -->
+    <div class="mt-12 border-t hairline">
+      
+      <!-- 1 -->
+      <article class="py-10 border-b hairline">
+        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+          <h2 class="text-[22px] tracking-tight">CK Stock Helper</h2>
+          <span class="text-[12px] text-mute dark:text-[#8f8b85]">2025 · internal</span>
+        </div>
+        <p class="text-[15.5px] leading-relaxed text-[#2b2b2b] dark:text-[#d1cdc7] max-w-[560px]">
+          Tools cek stok & size run toko CK. Upload CSV dari POS, auto highlight size kosong, export Excel buat SPV.
+          Dibuat karena capek cek manual tiap closing.
+        </p>
+        <div class="mt-3 text-[13px] text-mute dark:text-[#a7a39d]">JavaScript backend · server · XLSX · CSS utility — laptop 14 inci</div>
+        <div class="mt-4 text-[13.5px]"><span class="px-2 py-1 rounded border hairline text-[11px]">private / internal toko</span></div>
+      </article>
+
+      <!-- 2 -->
+      <article class="py-10 border-b hairline">
+        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+          <h2 class="text-[22px] tracking-tight">Shiftmate</h2>
+          <span class="text-[12px] text-mute dark:text-[#8f8b85]">2025 · demo</span>
+        </div>
+        <p class="text-[15.5px] leading-relaxed text-[#2b2b2b] dark:text-[#d1cdc7] max-w-[560px]">
+          Jadwal shift staff retail. Input mingguan, auto kirim reminder WA H-1 via Fonnte API. 
+          Tim toko jadi gak lupa shift pagi.
+        </p>
+        <div class="mt-3 text-[13px] text-mute dark:text-[#a7a39d]">CSS utility · Node API · MySQL · WhatsApp API</div>
+        <div class="mt-4 text-[13.5px]"><a href="#" class="underline underline-offset-4">Live demo →</a> <span class="text-mute mx-2">·</span> <a href="#" class="text-mute hover:text-ink">GitHub</a></div>
+      </article>
+
+      <!-- 3 -->
+      <article class="py-10 border-b hairline">
+        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+          <h2 class="text-[22px] tracking-tight">Kasir Mini</h2>
+          <span class="text-[12px] text-mute dark:text-[#8f8b85]">2024 · open source</span>
+        </div>
+        <p class="text-[15.5px] leading-relaxed text-[#2b2b2b] dark:text-[#d1cdc7] max-w-[560px]">
+          POS super sederhana buat UMKM teman. Scan barcode, stok auto kurang, struk thermal 58mm.
+          Jalan di laptop kentang.
+        </p>
+        <div class="mt-3 text-[13px] text-mute dark:text-[#a7a39d]">server · MySQL · EJS · CSS utility</div>
+        <div class="mt-4 text-[13.5px]"><a href="#" class="underline underline-offset-4">GitHub →</a></div>
+      </article>
+
+      <!-- 4 -->
+      <article class="py-10 border-b hairline">
+        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+          <h2 class="text-[22px] tracking-tight">kevin.id — personal site</h2>
+          <span class="text-[12px] text-mute dark:text-[#8f8b85]">2026 · live</span>
+        </div>
+        <p class="text-[15.5px] leading-relaxed text-[#2b2b2b] dark:text-[#d1cdc7] max-w-[560px]">
+          Website yang kamu baca ini. JavaScript backend + CSS utility CDN, 1 file HTML, dark mode, form kontak beneran.
+          Dibuat 1 malam habis shift.
+        </p>
+        <div class="mt-3 text-[13px] text-mute dark:text-[#a7a39d]">JavaScript backend · server · CSS utility CDN</div>
+        <div class="mt-4 text-[13.5px]"><a href="/" class="underline underline-offset-4">kevin.id →</a></div>
+      </article>
+
+      <!-- 5 -->
+      <article class="py-10 border-b hairline opacity-90">
+        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+          <h2 class="text-[22px] tracking-tight">WA Order Bot</h2>
+          <span class="text-[12px] text-mute dark:text-[#8f8b85]">2024 · freelance</span>
+        </div>
+        <p class="text-[15.5px] leading-relaxed text-[#2b2b2b] dark:text-[#d1cdc7] max-w-[560px]">
+          Bot WhatsApp terima order untuk toko thrift teman. Format otomatis: nama, alamat, SKU.
+          Masuk ke Google Sheet.
+        </p>
+        <div class="mt-3 text-[13px] text-mute dark:text-[#a7a39d]">JavaScript backend · Baileys · Google Sheets API</div>
+        <div class="mt-4 text-[12px] text-mute">client project — private</div>
+      </article>
+
+      <!-- 6 -->
+      <article class="py-10">
+        <div class="flex flex-wrap items-baseline justify-between gap-2 mb-2">
+          <h2 class="text-[22px] tracking-tight">Invoice Kilat</h2>
+          <span class="text-[12px] text-mute dark:text-[#8f8b85]">2023 · wip</span>
+        </div>
+        <p class="text-[15.5px] leading-relaxed text-[#2b2b2b] dark:text-[#d1cdc7] max-w-[560px]">
+          Generator invoice PDF untuk freelance side-hustle. Input di web, keluar PDF rapi.
+          Masih WIP, mau tambah QRIS.
+        </p>
+        <div class="mt-3 text-[13px] text-mute dark:text-[#a7a39d]">server · PDFKit · CSS utility</div>
+        <div class="mt-4 text-[12px] text-mute">coming soon</div>
+      </article>
+
+    </div>
+
+    <!-- CTA -->
+    <div class="mt-12 border-t hairline pt-10">
+      <p class="text-[17px] max-w-[480px] leading-relaxed">Punya ide project kecil? Saya ambil freelance malam & weekend. Budget UMKM friendly.</p>
+      <div class="mt-5 flex gap-5 text-[14px]">
+        <a href="/gallery">Gallery</a>
+        <a href="/#kontak" class="underline underline-offset-4">Hubungi Kevin →</a>
+        <a href="/rig" class="text-mute dark:text-[#a7a39d] hover:text-ink">Lihat rig saya →</a>
+      </div>
+    </div>
+
+    <footer class="border-t hairline mt-16 pt-8 text-[12.5px] text-mute dark:text-[#7f7b75] flex justify-between">
+      <a href="/" class="hover:text-ink dark:hover:text-[#e9e6e2]">← kevin.</a>
+      <span>6 projects · side-hustle log</span>
+    </footer>
+  </main>
+
+  <script>
+    const btn=document.getElementById('themeToggle');
+    if(btn){btn.onclick=()=>{document.documentElement.classList.toggle('dark');localStorage.theme=document.documentElement.classList.contains('dark')?'dark':'light';btn.textContent=document.documentElement.classList.contains('dark')?'●':'○'}; if(document.documentElement.classList.contains('dark')) btn.textContent='●';}
+  </script>
+</body>
+</html>
