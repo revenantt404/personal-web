@@ -14,7 +14,7 @@
         extend: {
           fontFamily: {
             sans: ['"Instrument Sans"', 'Inter', 'system-ui', 'sans-serif'],
-            display: ['"Fraunces"', 'serif'],
+            display: ['"EB Garamond"', 'serif'],
           },
           colors: {
             paper: '#faf9f7',
@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Instrument+Sans:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Instrument+Sans:wght@400;500&display=swap"
     rel="stylesheet">
   <style>
     body {
@@ -179,6 +179,18 @@
       button,
       a {
         -webkit-tap-highlight-color: transparent;
+      }
+
+      .flex.flex-wrap.gap-2 {
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        padding-bottom: 4px;
+      }
+
+      .flex.flex-wrap.gap-2::-webkit-scrollbar {
+        display: none;
       }
 
       footer {

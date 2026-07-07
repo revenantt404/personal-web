@@ -1373,7 +1373,7 @@ video {
 }
 
 .font-display {
-  font-family: "Fraunces", serif;
+  font-family: "EB Garamond", serif;
 }
 
 .font-mono {
@@ -1744,9 +1744,9 @@ body {
 }
 
 .prose h3{
-  font-family:"Fraunces",serif;
+  font-family:"EB Garamond",serif;
   font-weight:400;
-  font-size:22px;
+  font-size:27px;
   margin:1.8em 0 .6em
 }
 

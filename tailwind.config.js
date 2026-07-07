@@ -8,8 +8,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ['"Instrument Sans"', 'Inter', 'system-ui', 'sans-serif'],
-        display: ['"Fraunces"', 'serif'],
-        serif: ['"Fraunces"', 'Georgia', 'serif']
+        display: ['"EB Garamond"', 'serif'],
+        serif: ['"EB Garamond"', 'Georgia', 'serif']
       },
       colors: {
         paper: '#faf9f7',
