@@ -18,10 +18,10 @@ app.get('/rig', (req, res) => {
 });
 
 app.get('/tentang', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'tentang.html'));
+  res.redirect(301, '/about');
 });
 app.get('/about', (req, res) => {
-  res.redirect(301, '/tentang');
+  res.sendFile(path.join(__dirname, 'public', 'about.html'));
 });
 
 app.get('/jurnal', (req, res) => {

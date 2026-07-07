@@ -6,8 +6,8 @@
 body { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
 ::selection { background: #1a1a1a; color: #faf9f7; }
 .dark ::selection { background: #faf9f7; color: #1a1a1a; }
-.hairline { border-color: #e6e3df; }
-.dark .hairline { border-color: #2a2a2a; }
+.hairline, .hairline > :not([hidden]) ~ :not([hidden]) { border-color: #e6e3df; }
+.dark .hairline, .dark .hairline > :not([hidden]) ~ :not([hidden]) { border-color: #2a2a2a; }
 .prose p{margin:0 0 1.35em; line-height:1.78}
 .prose h3{font-family:"Fraunces",serif; font-weight:400; font-size:22px; margin:1.8em 0 .6em}
 .prose blockquote{border-left:2px solid #d5d2cd; padding-left:1.1em; color:#5a5a5a; font-style:italic; margin:1.5em 0}
