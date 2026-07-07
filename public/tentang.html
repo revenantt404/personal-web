@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tentang Kevin</title>
+  <meta name="description" content="Tentang Kevin, cowok 19 tahun, ENTJ-T, Jakarta, suka ngoding dan ngulik hal kecil sampai jalan.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#faf9f7;--ink:#1a1a1a;--muted:#6b6b6b;--soft:#3a3a3a;--line:#e6e3df;--card:#f3f1ec;--accent:#a66a05}
+    html.dark{--paper:#141414;--ink:#e9e6e2;--muted:#a7a39d;--soft:#c5c2bc;--line:#2a2a2a;--card:#1d1d1d;--accent:#d9ad57}
+    *{box-sizing:border-box} body{margin:0;background:var(--paper);color:var(--ink);font-family:"Instrument Sans",Inter,system-ui,sans-serif;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility}::selection{background:var(--ink);color:var(--paper)}
+    a{color:inherit;text-decoration:none}.wrap{max-width:720px;margin:0 auto;padding-left:24px;padding-right:24px}.wide{max-width:860px}.hairline{border-color:var(--line)}
+    header{padding-top:56px;padding-bottom:34px}.nav{display:flex;align-items:center;justify-content:space-between}.brand{font-size:18px;font-weight:500;letter-spacing:-.02em}.links{display:flex;align-items:center;gap:22px;color:var(--muted);font-size:14.5px}.links a:hover{color:var(--ink)}
+    #themeToggle{width:32px;height:32px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--ink);cursor:pointer}
+    main{padding-bottom:96px}.kicker{margin-top:48px;color:var(--muted);font-size:12px;letter-spacing:.12em;text-transform:uppercase}.title{font-family:"Fraunces",Georgia,serif;font-size:56px;line-height:1.02;font-weight:300;letter-spacing:-.025em;margin:16px 0 0}.lead{font-size:19px;line-height:1.75;color:var(--soft);max-width:620px;margin:24px 0 0}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.pill{border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--muted);font-size:12.5px;background:rgba(0,0,0,.012)}.dark .pill{background:rgba(255,255,255,.025)}
+    .essay{max-width:680px;margin:72px auto 0;border-top:1px solid var(--line);padding-top:42px}.essay p{font-size:18px;line-height:1.9;color:var(--soft);margin:0 0 1.45em}.essay p:first-child::first-letter{font-family:"Fraunces",Georgia,serif;font-size:62px;line-height:.86;float:left;padding-right:9px;color:var(--ink)}.essay h2{font-family:"Fraunces",Georgia,serif;font-weight:400;font-size:29px;line-height:1.18;margin:2.1em 0 .7em;color:var(--ink);letter-spacing:-.015em}.essay blockquote{margin:2em 0;padding:18px 0 18px 22px;border-left:2px solid var(--line);font-family:"Fraunces",Georgia,serif;font-size:24px;line-height:1.45;color:var(--ink)}
+
+    @media(min-width:641px){.essay p:first-child::first-letter{font-size:70px;line-height:.76;margin-top:.065em;padding-right:11px}}
+    .note{margin-top:52px;padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--card);color:var(--muted);font-size:14.5px;line-height:1.7}.note strong{color:var(--ink);font-weight:500}.back{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px;padding-top:28px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}.back a{text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--line)}.back a:hover{color:var(--ink);text-decoration-color:var(--ink)}
+    @media(max-width:640px){.wrap{padding-left:22px;padding-right:22px}header{padding-top:28px;padding-bottom:26px}.nav{align-items:flex-start;flex-direction:column;gap:18px}.links{width:100%;overflow-x:auto;white-space:nowrap;gap:16px;padding-bottom:6px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.links a{flex:0 0 auto;font-size:13.5px;line-height:32px}#themeToggle{margin-left:auto;min-width:32px}.title{font-size:clamp(38px,12vw,48px)}.lead{font-size:17px}.kicker{margin-top:28px}.essay{margin-top:54px;padding-top:34px}.essay p{font-size:16.5px;line-height:1.85}.essay h2{font-size:25px}.essay blockquote{font-size:21px}}
+  </style>
+  <script>if(localStorage.theme==='dark'||(!('theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}</script>
+</head>
+<body>
+  <header class="wrap">
+    <div class="nav">
+      <a href="/" class="brand">kevin.</a>
+      <nav class="links">
+        <a href="/tentang">Tentang</a>
+        <a href="/jurnal">Jurnal</a>
+        <a href="/rig">Rig</a>
+        <a href="/gallery">Gallery</a>
+        <a href="/#kontak">Kontak</a>
+        <button id="themeToggle" aria-label="Toggle theme">○</button>
+      </nav>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <section class="wide">
+      <p class="kicker">/tentang · cerita singkat</p>
+      <h1 class="title">Dari warnet, keyboard, dan rasa penasaran.</h1>
+      <p class="lead">Gua Kevin, cowok 19 tahun dari Jakarta. Cerita gua dengan komputer mulai jauh sebelum gua ngerti apa itu IT. Mulainya dari warnet, game, komputer rumah, dan rasa penasaran yang makin lama makin susah berhenti.</p>
+      <div class="meta">
+        <span class="pill">warnet kid</span>
+        <span class="pill">mulai ngoding kelas 6</span>
+        <span class="pill">SMK RPL</span>
+        <span class="pill">software 8 · hardware 2</span>
+      </div>
+    </section>
+
+    <article class="essay">
+      <p>Kenal komputer bukan dari kelas, bukan dari buku tebal, dan jelas bukan dari cita-cita yang terdengar rapi. Semuanya mulai dari warnet. Umur gua baru empat tahun waktu itu, umur yang harusnya masih sibuk lari-larian tanpa mikir apa-apa. Tapi di tempat gua, warnet lagi rame banget. Anak-anak, remaja, orang dewasa, semuanya punya layar masing-masing, headset masing-masing, dunia kecil masing-masing.</p>
+
+      <p>Awalnya gua cuma ikut arus. Main game seperti anak kecil lain. Klik sana, pencet sini, kalah, ulang lagi. Nggak ada yang kelihatan spesial. Tapi kalau dipikir sekarang, ada sesuatu yang diam-diam kebentuk dari situ: tangan kecil gua mulai akrab sama keyboard, mata gua mulai paham pola layar, dan kepala gua mulai ngerti kalau internet itu bukan sekadar tempat main, tapi pintu ke banyak hal.</p>
+
+      <h2>Komputer pertama, niatnya belajar. Ujungnya tetap game.</h2>
+      <p>Waktu umur lima tahun, orang rumah beliin gua komputer. Niatnya jelas: biar gua bisa belajar. Kedengarannya bagus, kan? Tapi kenyataannya ya… namanya juga bocah. Komputer itu akhirnya lebih sering jadi mesin game daripada mesin belajar. Gua main lagi, utak-atik lagi, penasaran lagi. Kadang niatnya buka sesuatu yang “berguna”, tapi ujung-ujungnya balik ke game.</p>
+
+      <p>Lucunya, justru dari situ banyak hal masuk tanpa gua sadari. Gua belajar cara nyari sesuatu. Belajar buka folder. Belajar install ini-itu. Belajar kalau ada error, jangan langsung panik. Coba klik, coba baca, coba ulang. Hal-hal kecil yang buat orang dewasa mungkin biasa, tapi buat anak umur segitu, itu bukan hal yang semua orang pegang.</p>
+
+      <blockquote>Kadang yang kelihatan cuma main-main, ternyata diam-diam lagi ngajarin cara mikir.</blockquote>
+
+      <h2>Lalu ada abang yang ngerti hardware.</h2>
+      <p>Di hidup gua ada satu orang yang pengaruhnya besar: om yang sudah gua anggap seperti abang sendiri. Dia jago banget soal komputer, terutama hardware. Buat gua kecil, orang yang bisa bongkar-pasang komponen, ngerti part, ngerti mesin dari dalam, itu kelihatan hampir seperti pesulap. Bedanya, trik dia bukan sulap, dia memang paham.</p>
+
+      <p>Dari dia, gua lihat sisi komputer yang fisik: kabel, casing, komponen, panas, suara kipas, dan semua benda yang bikin layar bisa menyala. Tapi entah kenapa, jalur gua pelan-pelan belok ke software. Kalau dia kuat di hardware, gua lebih tertarik sama apa yang terjadi setelah mesin itu hidup. Programnya. Sistemnya. Cara sesuatu bisa jalan cuma karena baris-baris instruksi yang ditulis manusia.</p>
+
+      <p>Kalau harus dibuat rasio, mungkin gua 8 di software dan 2 di hardware. Abang gua kebalikannya. Dan menurut gua itu menarik. Kayak dua sisi dari dunia yang sama: dia ngerti badan mesinnya, gua belajar bahasa pikirannya.</p>
+
+      <h2>Mulai ngoding dari kelas 6.</h2>
+      <p>Kalau warnet bikin gua kenal komputer, kelas 6 bikin gua mulai sadar kalau komputer bukan cuma buat dipakai. Tapi bisa diajak bikin sesuatu. Dari situ gua mulai nyentuh coding. Awalnya tentu belum rapi. Banyak coba-coba, banyak bingung, banyak ngerasa “kok bisa error padahal gua cuma ubah sedikit?”. Tapi justru error-error kecil itu yang bikin gua makin penasaran.</p>
+
+      <p>Masuk SMP, rasa penasaran itu gak hilang. Gua mulai lebih sering ngulik software, nyari tutorial, baca hal-hal random, dan pelan-pelan ngerti pola berpikirnya. Bukan langsung jago, tapi makin lama makin kebentuk: kalau ada masalah, pecah dulu. Kalau mentok, cari jalan lain. Kalau masih gagal, istirahat sebentar lalu ulang lagi.</p>
+
+      <p>Lalu di SMK, gua masuk jurusan RPL. Di situ rasanya jalur yang tadinya cuma hobi mulai punya nama. Rekayasa Perangkat Lunak. Kedengarannya formal banget, tapi buat gua intinya sederhana: gua akhirnya berada di tempat yang cukup dekat dengan hal yang dari kecil bikin gua penasaran.</p>
+
+      <h2>Nerd biasa, kadang sok keren dikit.</h2>
+      <p>Di luar semua cerita komputer itu, gua sebenarnya cuma cowok nerd biasa. Berkacamata, banyak mikir, dan kadang terlalu serius sama hal-hal yang buat orang lain mungkin sepele. Salah satu hal yang paling kelihatan dari gua adalah cara bicara. Gua sering terdengar formal, kaku, bahkan kadang terlalu sesuai KBBI untuk obrolan yang sebenarnya santai.</p>
+
+      <p>Itu bukan muncul tiba-tiba. Dari SMP gua sudah ikut organisasi, lalu kebiasaan itu lanjut sampai SMK. Di forum organisasi, gua terbiasa menyusun kalimat sebelum bicara. Harus jelas, harus rapi, harus sopan, harus bisa dipahami banyak orang. Lama-lama cara ngomong seperti itu nempel. Setelah keluar dari suasana rapat pun, bahasanya masih kebawa ke kehidupan sehari-hari.</p>
+
+      <p>Di lingkungan profesional, kebiasaan itu sering membantu. Gua bisa menjelaskan sesuatu dengan lebih runut, memilih kata dengan hati-hati, dan terdengar lebih siap. Tapi di obrolan sosial, efeknya kadang lucu. Ada momen ketika orang lain cuma bercanda santai, sementara gua jawabnya seperti sedang menyampaikan laporan. Ada yang bilang kosakata gua bagus, ada juga yang ketawa karena gua terdengar terlalu serius.</p>
+
+      <p>Tapi gua juga manusia yang punya mode lain. Ada kalanya kalau lagi mood, gua pengen tampil sedikit lebih rapi, sedikit lebih keren: rambut messy, lepas kacamata, gaya dikit. Ya, walaupun setelah itu tetap balik lagi jadi gua yang biasa: nerd berkacamata yang kadang formal, kadang canggung, tapi tetap berusaha tampil baik di depan orang lain.</p>
+
+      <p>Gua ga sedang berusaha kelihatan paling unik. Justru sebaliknya. Gua cuma cowok biasa yang pelan-pelan belajar menerima bagian-bagian kecil dari diri gua sendiri. Kaku sedikit, formal sedikit, terlalu mikir sedikit. Ya itu gua. Aneh sedikit, tapi gua bangga, karena itu juga bagian dari perjalanan gua.</p>
+
+      <h2>Soal perasaan, gua gak terlalu jago.</h2>
+      <p>Kehidupan percintaan gua juga bukan bagian yang bisa dibanggakan. Gua sering enggak peka sama perasaan orang lain. Kadang baru sadar setelah semuanya lewat. Kadang terlalu fokus sama logika, kerjaan, atau hal yang bisa gua ukur, sampai lupa kalau manusia ga selalu bisa dipahami seperti sistem.</p>
+
+      <p>Mungkin karena itu gua sering milih fokus kerja, fokus belajar, fokus bikin sesuatu. Bukan karena gua anti perasaan, tapi karena di dunia teknis, setidaknya gua tahu harus mulai dari mana. Kalau error, cari penyebab. Kalau rusak, debug. Kalau belum jadi, ulang. Sementara urusan hati, gua selalu kalah WKWK.</p>
+
+      <blockquote><em>Maybe I'm not built for love</em>. If I knew that I could reach you, I would go.<br><span style="display:block;margin-top:10px;font-size:15px;color:var(--muted);font-style:normal">Seafret, Atlantis</span></blockquote>
+
+      <p>Jadi kalau halaman ini harus merangkum gua, mungkin begini: gua tumbuh dari warnet, dibentuk oleh komputer rumah, mulai ngoding dari kelas 6, lanjut ngulik pas SMP, masuk SMK RPL, lalu jatuh lebih dalam ke software. Gua cowok 19 tahun yang biasa aja, nerd, berkacamata, kadang sok keren dikit, dan masih belajar memahami dunia di luar layar.</p>
+
+      <p>Belum ada kesimpulan besar di sini. Gua juga belum merasa jadi siapa-siapa. Tapi dari umur empat tahun yang cuma main di warnet, kelas 6 yang mulai nyentuh coding, sampai sekarang yang mulai bikin tools sendiri, ada satu garis yang nggak putus: rasa penasaran. Dan selama rasa itu masih ada, kayaknya gua bakal terus balik ke keyboard.</p>
+
+      <div class="note">
+        <strong>Catatan:</strong> ini masih versi awal halaman tentang. Nanti bisa ditambah bagian lain: masa sekolah, project pertama, setup komputer, orang-orang yang ngaruh, sampai kenapa website ini akhirnya dibuat.
+      </div>
+
+      <div class="back">
+        <a href="/">← balik ke home</a>
+        <a href="/jurnal">lanjut baca jurnal →</a>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    const btn=document.getElementById('themeToggle');
+    if(btn){btn.onclick=()=>{document.documentElement.classList.toggle('dark');localStorage.theme=document.documentElement.classList.contains('dark')?'dark':'light';btn.textContent=document.documentElement.classList.contains('dark')?'●':'○'}; if(document.documentElement.classList.contains('dark')) btn.textContent='●';}
+  </script>
+</body>
+</html>
