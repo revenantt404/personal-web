@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>404 — Page Not Found</title>
+  <meta name="description" content="Halaman tidak ditemukan.">
+
+  <!-- SPA-style redirect for clean URLs -->
+  <script>
+    (function () {
+      // Map clean URLs to actual HTML files
+      var routes = {
+        '/rig': '/rig.html',
+        '/about': '/about.html',
+        '/tentang': '/about.html',
+        '/jurnal': '/journal.html',
+        '/journal': '/journal.html',
+        '/gallery': '/gallery.html',
+        '/projects': '/journal.html'
+      };
+
+      var path = window.location.pathname;
+
+      // Check exact route match
+      if (routes[path]) {
+        window.location.replace(routes[path]);
+        return;
+      }
+
+      // Check if path starts with /jurnal/ (journal articles)
+      if (path.indexOf('/jurnal/') === 0) {
+        // Already correct path, let it 404 naturally if file doesn't exist
+      }
+    })();
+  </script>
+
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Instrument Sans"', 'Inter', 'system-ui', 'sans-serif'],
+            display: ['"EB Garamond"', 'serif'],
+          },
+          colors: {
+            paper: '#faf9f7',
+            ink: '#1a1a1a',
+            mute: '#6b6b6b',
+            line: '#e6e3df',
+            ck: '#111111'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      font-family: 'Instrument Sans', 'Inter', system-ui, sans-serif;
+      background-color: #111111;
+      color: #faf9f7;
+    }
+
+    .glitch {
+      animation: glitch 2.5s infinite;
+    }
+
+    @keyframes glitch {
+      0%, 90%, 100% { transform: translate(0); opacity: 1; }
+      92% { transform: translate(-2px, 1px); opacity: 0.8; }
+      94% { transform: translate(2px, -1px); opacity: 0.9; }
+      96% { transform: translate(-1px, 2px); opacity: 0.7; }
+      98% { transform: translate(1px, -2px); opacity: 0.85; }
+    }
+
+    .fade-in {
+      animation: fadeIn 0.8s ease-out forwards;
+      opacity: 0;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+  </style>
+</head>
+
+<body class="min-h-screen flex items-center justify-center px-6">
+  <div class="text-center max-w-md fade-in">
+    <p class="text-8xl font-display font-bold glitch mb-6 tracking-tight" style="color: #faf9f7;">404</p>
+    <p class="text-lg text-gray-400 mb-2">Halaman tidak ditemukan.</p>
+    <p class="text-sm text-gray-500 mb-8">Mungkin kamu salah jalan, atau halaman ini sudah dipindahkan.</p>
+    <a href="/"
+      class="inline-block px-6 py-2.5 text-sm font-medium border border-gray-600 rounded-full text-gray-300 hover:bg-white hover:text-black transition-all duration-300">
+      ← Kembali ke Beranda
+    </a>
+  </div>
+</body>
+
+</html>
