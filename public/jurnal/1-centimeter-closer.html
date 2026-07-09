@@ -7,9 +7,26 @@
   <title>1 Centimeter closer — Kevin</title>
   <meta name="description"
     content="But just looking at her made my heart pound and hearing her voice made it soar.">
-  <script src="https://cdn.CSS utilitycss.com"></script>
+  <script src="https://cdn.tailwindcss.com"></script>
   <script>
-    CSS utility.config = { darkMode: 'class', theme: { extend: { fontFamily: { sans: ['"Instrument Sans"', 'Inter', 'system-ui', 'sans-serif'], display: ['"EB Garamond"', 'serif'] }, colors: { paper: '#faf9f7', ink: '#1a1a1a', mute: '#6b6b6b', line: '#e6e3df' } } } }
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Instrument Sans"', 'Inter', 'system-ui', 'sans-serif'],
+            display: ['"EB Garamond"', 'serif'],
+          },
+          colors: {
+            paper: '#faf9f7',
+            ink: '#1a1a1a',
+            mute: '#6b6b6b',
+            line: '#e6e3df',
+            ck: '#111111'
+          }
+        }
+      }
+    }
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -2300,20 +2317,23 @@
   </style>
 </head>
 
-<body class="bg-paper text-ink dark:bg-[#141414] dark:text-[#e9e6e2] font-sans">
-  <header class="max-w-[680px] mx-auto px-6 md:px-0 pt-10 md:pt-14 pb-6">
-    <div class="flex items-center justify-between text-[14px] text-mute dark:text-[#a7a39d]">
-      <a href="/" class="text-ink dark:text-[#e9e6e2] font-[500]">kevin.</a>
-      <nav class="flex items-center gap-5">
-        <a href="/jurnal" class="hover:text-ink dark:hover:text-[#e9e6e2]">← Jurnal</a>
-        <a href="/rig" class="hover:text-ink dark:hover:text-[#e9e6e2]">Rig</a>
-        <a href="/gallery" class="hover:text-ink dark:hover:text-[#e9e6e2]">Gallery</a>
-        <button id="themeToggle" class="w-7 h-7 rounded-full border hairline text-[11px]">○</button>
+<body class="bg-paper text-ink dark:bg-[#141414] dark:text-[#e9e6e2] font-sans text-[16px] leading-relaxed">
+  <header class="max-w-[720px] mx-auto px-6 md:px-0 pt-10 md:pt-16 pb-8">
+    <div class="flex items-center justify-between">
+      <a href="/" class="text-[18px] tracking-tight font-[500] text-ink dark:text-[#e9e6e2]">kevin.</a>
+      <nav class="flex items-center gap-5 md:gap-6 text-[14px] md:text-[14.5px] text-mute dark:text-[#a7a39d]">
+        <a href="/jurnal" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">← Jurnal</a>
+        <a href="/rig" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Rig</a>
+        <a href="/gallery" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Gallery</a>
+        <button id="themeToggle" aria-label="Toggle theme"
+          class="ml-2 w-8 h-8 rounded-full border hairline flex items-center justify-center hover:bg-black/[0.03] dark:hover:bg-white/[0.06] transition">
+          <span class="text-[11px]" id="themeIcon">○</span>
+        </button>
       </nav>
     </div>
   </header>
 
-  <article class="max-w-[680px] mx-auto px-6 md:px-0 pb-24">
+  <article class="max-w-[720px] mx-auto px-6 md:px-0 pb-24">
     <div class="text-[11.5px] tracking-wider text-mute dark:text-[#8f8b85] uppercase mb-3">1 January 2026 · Jakarta · 3 menit baca</div>
     <h1 class="font-display text-[34px] md:text-[48px] leading-[1.07] tracking-[-0.012em] font-[300]">1 Centimeter closer.</h1>
     <p class="mt-4 text-[17px] leading-relaxed italic text-[#3b3b3b] dark:text-[#c5c2bc] max-w-[540px]">"But just looking at her made my heart pound and hearing her voice made it soar."</p>
@@ -2371,10 +2391,22 @@
     </footer>
     </main>
 
-    <script>
-      const btn = document.getElementById('themeToggle');
-      if (btn) { btn.onclick = () => { document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light'; btn.textContent = document.documentElement.classList.contains('dark') ? '●' : '○' }; if (document.documentElement.classList.contains('dark')) btn.textContent = '●'; }
-    </script>
+  <script>
+    const btn = document.getElementById('themeToggle');
+    const icon = document.getElementById('themeIcon');
+    function syncIcon() {
+      const isDark = document.documentElement.classList.contains('dark');
+      icon.textContent = isDark ? '●' : '○';
+    }
+    syncIcon();
+    if (btn) {
+      btn.onclick = () => {
+        document.documentElement.classList.toggle('dark');
+        localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+        syncIcon();
+      };
+    }
+  </script>
 </body>
 
 </html>

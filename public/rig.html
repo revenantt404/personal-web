@@ -20,7 +20,8 @@
             paper: '#faf9f7',
             ink: '#1a1a1a',
             mute: '#6b6b6b',
-            line: '#e6e3df'
+            line: '#e6e3df',
+            ck: '#111111'
           }
         }
       }
@@ -59,26 +60,7 @@
       document.documentElement.classList.add('dark')
     }
   </script>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ['"Instrument Sans"', 'Inter', 'system-ui', 'sans-serif'],
-            display: ['"EB Garamond"', 'serif'],
-          },
-          colors: {
-            paper: '#faf9f7',
-            ink: '#1a1a1a',
-            mute: '#6b6b6b',
-            line: '#e6e3df'
-          }
-        }
-      }
-    }
-  </script>
+
   <style id="mobile-optimizations">
     /* Mobile-only polish. Desktop/tablet layout is untouched. */
     @media (max-width: 640px) {
@@ -208,14 +190,14 @@
   </style>
 </head>
 
-<body class="bg-paper text-ink dark:bg-[#141414] dark:text-[#e9e6e2] font-sans">
+<body class="bg-paper text-ink dark:bg-[#141414] dark:text-[#e9e6e2] font-sans text-[16px] leading-relaxed">
   <header class="max-w-[720px] mx-auto px-6 md:px-0 pt-10 md:pt-16 pb-8">
     <div class="flex items-center justify-between">
       <a href="/" class="text-[18px] tracking-tight font-[500]">kevin.</a>
       <nav class="flex items-center gap-5 md:gap-6 text-[14px] md:text-[14.5px] text-mute dark:text-[#a7a39d]">
         <a href="/about" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Tentang</a>
         <a href="/jurnal" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Jurnal</a>
-        <a href="/rig" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Rig</a>
+        <a href="/rig" class="text-ink dark:text-[#e9e6e2]">Rig</a>
         <a href="/gallery" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Gallery</a>
         <a href="/#kontak" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Kontak</a>
         <button id="themeToggle" aria-label="Toggle theme"
@@ -552,9 +534,19 @@
 
   <script>
     const btn = document.getElementById('themeToggle');
-    if (btn) btn.onclick = () => { document.documentElement.classList.toggle('dark'); localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light'; if (document.documentElement.classList.contains('dark')) btn.textContent = '●'; else btn.textContent = '○' };
-    // init icon
-    if (document.documentElement.classList.contains('dark') && btn) btn.textContent = '●';
+    const icon = document.getElementById('themeIcon');
+    function syncIcon() {
+      const isDark = document.documentElement.classList.contains('dark');
+      icon.textContent = isDark ? '●' : '○';
+    }
+    syncIcon();
+    if (btn) {
+      btn.onclick = () => {
+        document.documentElement.classList.toggle('dark');
+        localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
+        syncIcon();
+      };
+    }
   </script>
 </body>
 
