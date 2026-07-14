@@ -1,3 +1,13 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/jurnal", "destination": "/journal.html" },
+    { "source": "/journal", "destination": "/journal.html" },
+    { "source": "/about", "destination": "/about.html" },
+    { "source": "/tentang", "destination": "/about.html" },
+    { "source": "/gallery", "destination": "/gallery.html" },
+    { "source": "/rig", "destination": "/rig.html" },
+    { "source": "/projects", "destination": "/journal.html" }
+  ]
 }

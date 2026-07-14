@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
@@ -2203,18 +2203,38 @@
 
       header>div {
         flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 18px !important;
+        align-items: stretch !important;
+        gap: 14px !important;
+      }
+
+      /* brand left, avatar right on first row */
+      header>div>a:first-child {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+      }
+
+      /* nav + profile row */
+      header>div>div {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        gap: 10px !important;
+        min-width: 0 !important;
       }
 
       header nav {
-        width: 100%;
+        flex: 1 1 auto !important;
+        width: auto !important;
         max-width: 100%;
+        min-width: 0 !important;
         gap: 14px !important;
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
-        padding-bottom: 6px;
+        padding-bottom: 2px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
       }
@@ -2229,11 +2249,21 @@
         line-height: 32px;
       }
 
-      header nav button {
-        flex: 0 0 auto;
-        margin-left: auto !important;
-        min-width: 32px;
-        min-height: 32px;
+      #themeToggle {
+        flex: 0 0 auto !important;
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+        margin-left: 0 !important;
+      }
+
+      #themeToggle img {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        object-fit: cover !important;
+        display: block !important;
       }
 
       main {
@@ -2296,6 +2326,11 @@
         padding: 1px 3px;
       }
 
+      /* don't wrap header controls; allow wrap elsewhere if needed */
+      header .flex.items-center {
+        flex-wrap: nowrap !important;
+      }
+
       footer {
         gap: 8px !important;
       }
@@ -2318,23 +2353,38 @@
 </head>
 
 <body class="bg-paper text-ink dark:bg-[#141414] dark:text-[#e9e6e2] font-sans text-[16px] leading-relaxed">
-  <header class="max-w-[720px] mx-auto px-6 md:px-0 pt-10 md:pt-16 pb-8">
-    <div class="flex items-center justify-between">
+    <header class="max-w-[720px] mx-auto px-6 md:px-0 pt-10 md:pt-16 pb-8">
+    <div class="flex items-center justify-between gap-4">
       <a href="/" class="text-[18px] tracking-tight font-[500] text-ink dark:text-[#e9e6e2]">kevin.</a>
-      <nav class="flex items-center gap-5 md:gap-6 text-[14px] md:text-[14.5px] text-mute dark:text-[#a7a39d]">
-        <a href="/jurnal" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">← Jurnal</a>
-        <a href="/rig" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Rig</a>
-        <a href="/gallery" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Gallery</a>
-        <button id="themeToggle" aria-label="Toggle theme"
-          class="ml-2 w-8 h-8 rounded-full border hairline flex items-center justify-center hover:bg-black/[0.03] dark:hover:bg-white/[0.06] transition">
-          <span class="text-[11px]" id="themeIcon">○</span>
+      <div class="flex items-center gap-3 md:gap-4 min-w-0">
+        <nav class="flex items-center gap-5 md:gap-6 text-[14px] md:text-[14.5px] text-mute dark:text-[#a7a39d]">
+          <a href="/jurnal" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">← Journal</a>
+          <a href="/rig" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Rig</a>
+          <a href="/gallery" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Gallery</a>
+        </nav>
+        <button id="themeToggle" type="button" aria-label="Theme settings" aria-haspopup="true" aria-expanded="false"
+          class="ml-1 w-8 h-8 shrink-0 rounded-full border hairline overflow-hidden flex items-center justify-center hover:opacity-90 transition p-0 bg-[#ecebe8] dark:bg-[#222] cursor-pointer aspect-square">
+          <img src="/images/profile-silhouette.png" alt="Profile" class="w-full h-full object-cover pointer-events-none" width="32" height="32" draggable="false">
         </button>
-      </nav>
+      </div>
     </div>
   </header>
+  <div id="themeMenu" role="menu" aria-label="Theme" hidden
+    style="display:none; position:fixed; z-index:9999; min-width:160px; border-radius:12px; padding:6px 0; font-size:13px;">
+    <button type="button" role="menuitemradio" data-theme="light" class="theme-opt"
+      style="display:flex; width:100%; text-align:left; padding:10px 14px; background:transparent; border:0; cursor:pointer; align-items:center; justify-content:space-between; gap:12px; font:inherit; color:inherit;">
+      <span>Light mode</span>
+      <span class="theme-check" hidden style="font-size:12px;">✓</span>
+    </button>
+    <button type="button" role="menuitemradio" data-theme="dark" class="theme-opt"
+      style="display:flex; width:100%; text-align:left; padding:10px 14px; background:transparent; border:0; cursor:pointer; align-items:center; justify-content:space-between; gap:12px; font:inherit; color:inherit;">
+      <span>Dark mode</span>
+      <span class="theme-check" hidden style="font-size:12px;">✓</span>
+    </button>
+  </div>
 
   <article class="max-w-[720px] mx-auto px-6 md:px-0 pb-24">
-    <div class="text-[11.5px] tracking-wider text-mute dark:text-[#8f8b85] uppercase mb-3">1 January 2026 · Jakarta · 3 menit baca</div>
+    <div class="text-[11.5px] tracking-wider text-mute dark:text-[#8f8b85] uppercase mb-3">1 January 2026 · Jakarta · 3 min read</div>
     <h1 class="font-display text-[34px] md:text-[48px] leading-[1.07] tracking-[-0.012em] font-[300]">1 Centimeter closer.</h1>
     <p class="mt-4 text-[17px] leading-relaxed italic text-[#3b3b3b] dark:text-[#c5c2bc] max-w-[540px]">"But just looking at her made my heart pound and hearing her voice made it soar."</p>
 
@@ -2382,30 +2432,160 @@
     <nav class="mt-16 border-t hairline pt-8 text-[14px]">
       <a href="/jurnal"
         class="underline underline-offset-4 decoration-[#d5d2cd] dark:decoration-[#444] hover:decoration-ink dark:hover:decoration-[#e9e6e2]">←
-        balik ke Jurnal</a>
+        back to Journal</a>
     </nav>
 
     <footer class="mt-10 text-[12px] text-mute dark:text-[#7f7b75] flex justify-between">
-      <span>© Kevin · kf-thedev.id</span>
+      <span>© Kevin · k-f.my.id</span>
       <a href="/" class="hover:text-ink dark:hover:text-[#e9e6e2]">home</a>
     </footer>
     </main>
 
   <script>
-    const btn = document.getElementById('themeToggle');
-    const icon = document.getElementById('themeIcon');
-    function syncIcon() {
-      const isDark = document.documentElement.classList.contains('dark');
-      icon.textContent = isDark ? '●' : '○';
-    }
-    syncIcon();
-    if (btn) {
-      btn.onclick = () => {
-        document.documentElement.classList.toggle('dark');
-        localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-        syncIcon();
-      };
-    }
+    (function () {
+      try {
+        var yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+      } catch (e) {}
+
+      var btn = document.getElementById('themeToggle');
+      var menu = document.getElementById('themeMenu');
+      if (!btn || !menu) return;
+
+      if (menu.parentElement !== document.body) {
+        document.body.appendChild(menu);
+      }
+
+      function isDark() {
+        return document.documentElement.classList.contains('dark');
+      }
+
+      function getTheme() {
+        try {
+          var stored = localStorage.getItem('theme');
+          if (stored === 'dark' || stored === 'light') return stored;
+        } catch (e) {}
+        return isDark() ? 'dark' : 'light';
+      }
+
+      function paintMenu() {
+        var dark = isDark();
+        menu.style.background = dark ? '#1d1d1d' : '#faf9f7';
+        menu.style.color = dark ? '#e9e6e2' : '#1a1a1a';
+        menu.style.border = '1px solid ' + (dark ? '#2a2a2a' : '#e6e3df');
+        menu.style.boxShadow = dark
+          ? '0 16px 48px rgba(0,0,0,0.5)'
+          : '0 12px 40px rgba(0,0,0,0.14)';
+      }
+
+      function syncChecks() {
+        var theme = getTheme();
+        var opts = menu.querySelectorAll('.theme-opt');
+        for (var i = 0; i < opts.length; i++) {
+          var opt = opts[i];
+          var on = opt.getAttribute('data-theme') === theme;
+          var check = opt.querySelector('.theme-check');
+          if (check) check.hidden = !on;
+          opt.setAttribute('aria-checked', on ? 'true' : 'false');
+          opt.style.fontWeight = on ? '600' : '400';
+        }
+      }
+
+      function applyTheme(mode) {
+        if (mode === 'dark') document.documentElement.classList.add('dark');
+        else document.documentElement.classList.remove('dark');
+        try { localStorage.setItem('theme', mode); } catch (e) {}
+        paintMenu();
+        syncChecks();
+      }
+
+      function positionMenu() {
+        var r = btn.getBoundingClientRect();
+        menu.style.visibility = 'hidden';
+        menu.style.display = 'block';
+        var mw = menu.offsetWidth || 160;
+        var mh = menu.offsetHeight || 90;
+        menu.style.visibility = 'visible';
+
+        var left = r.right - mw;
+        if (left < 12) left = 12;
+        if (left + mw > window.innerWidth - 12) left = window.innerWidth - mw - 12;
+
+        var top = r.bottom + 10;
+        if (top + mh > window.innerHeight - 12) {
+          top = Math.max(12, r.top - mh - 10);
+        }
+
+        menu.style.top = Math.round(top) + 'px';
+        menu.style.left = Math.round(left) + 'px';
+      }
+
+      var open = false;
+
+      function openMenu() {
+        paintMenu();
+        syncChecks();
+        menu.hidden = false;
+        menu.style.display = 'block';
+        positionMenu();
+        btn.setAttribute('aria-expanded', 'true');
+        open = true;
+      }
+
+      function closeMenu() {
+        menu.hidden = true;
+        menu.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+        open = false;
+      }
+
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (open) closeMenu();
+        else openMenu();
+      });
+
+      var opts = menu.querySelectorAll('.theme-opt');
+      for (var i = 0; i < opts.length; i++) {
+        opts[i].addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          applyTheme(this.getAttribute('data-theme'));
+          closeMenu();
+        });
+        opts[i].addEventListener('mouseenter', function () {
+          this.style.background = isDark() ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)';
+        });
+        opts[i].addEventListener('mouseleave', function () {
+          this.style.background = 'transparent';
+        });
+      }
+
+      document.addEventListener('click', function (e) {
+        if (!open) return;
+        if (btn.contains(e.target) || menu.contains(e.target)) return;
+        closeMenu();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && open) closeMenu();
+      });
+
+      window.addEventListener('resize', function () {
+        if (open) positionMenu();
+      });
+      window.addEventListener('scroll', function () {
+        if (open) positionMenu();
+      }, true);
+
+      applyTheme(getTheme());
+      closeMenu();
+    })();
+
+
+
+
   </script>
 </body>
 
