@@ -210,7 +210,7 @@
         padding: 16px 14px 14px !important;
       }
 
-      .kb-visual .grid > div {
+      .kb-visual .grid>div {
         height: 22px !important;
         min-height: 22px !important;
       }
@@ -254,7 +254,7 @@
 </head>
 
 <body class="bg-paper text-ink dark:bg-[#141414] dark:text-[#e9e6e2] font-sans text-[16px] leading-relaxed">
-    <header class="max-w-[720px] mx-auto px-6 md:px-0 pt-10 md:pt-16 pb-8">
+  <header class="max-w-[720px] mx-auto px-6 md:px-0 pt-10 md:pt-16 pb-8">
     <div class="flex items-center justify-between gap-4">
       <a href="/" class="text-[18px] tracking-tight font-[500]">kevin.</a>
       <div class="flex items-center gap-3 md:gap-4 min-w-0">
@@ -267,7 +267,8 @@
         </nav>
         <button id="themeToggle" type="button" aria-label="Theme settings" aria-haspopup="true" aria-expanded="false"
           class="ml-1 w-8 h-8 shrink-0 rounded-full border hairline overflow-hidden flex items-center justify-center hover:opacity-90 transition p-0 bg-[#ecebe8] dark:bg-[#222] cursor-pointer aspect-square">
-          <img src="/images/profile-silhouette.png" alt="Profile" class="w-full h-full object-cover pointer-events-none" width="32" height="32" draggable="false">
+          <img src="/images/profile-silhouette.png" alt="Profile" class="w-full h-full object-cover pointer-events-none"
+            width="32" height="32" draggable="false">
         </button>
       </div>
     </div>
@@ -320,13 +321,15 @@
       <div class="grid grid-cols-12 gap-[14px] md:gap-[18px] text-[#1a1a1a] dark:text-[#e9e6e2]">
 
         <!-- TOP LEFT — LAPTOP -->
-        <div class="rig-card col-span-12 md:col-span-5 p-6 md:p-7 min-h-[190px] flex flex-col justify-between relative overflow-hidden">
+        <div
+          class="rig-card col-span-12 md:col-span-5 p-6 md:p-7 min-h-[190px] flex flex-col justify-between relative overflow-hidden">
           <div class="flex justify-between items-start">
             <div>
               <div class="text-[12px] tracking-wider text-[#6b6b6b] dark:text-[#a7a39d] font-[500]">LAPTOP</div>
               <div class="text-[26px] md:text-[30px] font-[700] tracking-tight leading-none mt-1"
                 style="font-family: Inter, system-ui, sans-serif;">Latitude 3410</div>
-              <div class="text-[12.5px] text-[#6b6b6b] dark:text-[#a7a39d] mt-0.5">i5-10210U · 14" · 16GB RAM · 512GB SSD</div>
+              <div class="text-[12.5px] text-[#6b6b6b] dark:text-[#a7a39d] mt-0.5">i5-10210U · 14" · 16GB RAM · 512GB
+                SSD</div>
             </div>
             <div class="text-right text-[11px] text-[#8a8a8a] dark:text-[#8f8b85] leading-tight">
               14” FHD<br>60Hz
@@ -453,7 +456,8 @@
             </div>
             <div class="kb-meta mt-4 md:mt-5 px-1">
               <div class="text-center text-[11px] tracking-wider" style="color:#9a9a9a;">Vortex Series Mono 65</div>
-              <div class="mt-2 flex items-center justify-between gap-3 text-[10px] md:text-[11px] tracking-wider" style="color:#7a7a7a;">
+              <div class="mt-2 flex items-center justify-between gap-3 text-[10px] md:text-[11px] tracking-wider"
+                style="color:#7a7a7a;">
                 <span class="shrink-0">mechanical button</span>
                 <span class="shrink-0 text-right">65% keyboard layout</span>
               </div>
@@ -535,7 +539,8 @@
           </div>
           <div class="py-4 flex justify-between gap-6">
             <div><strong class="font-[500]">Vortex Series Mono 65</strong>
-              <div class="text-[13.5px] text-mute dark:text-[#a7a39d]">65% mechanical · compact, nice for late-night typing
+              <div class="text-[13.5px] text-mute dark:text-[#a7a39d]">65% mechanical · compact, nice for late-night
+                typing
               </div>
             </div>
             <span class="text-[12px] text-mute shrink-0">Keyboard</span>
@@ -596,7 +601,7 @@
       </div>
 
       <div class="pt-4 text-[13.5px] text-mute dark:text-[#a7a39d]">
-        Want detailed specs / buy links? Email <a href="mailto:kevin@email.com"
+        Want detailed specs / buy links? Email <a href="mailto:kevinferas.work@gmail.com"
           class="underline underline-offset-3 text-ink dark:text-[#e9e6e2]">kevinferas.work@email.com</a><br>
         Update log:
         <ul class="mt-2 space-y-1">
@@ -618,7 +623,7 @@
       try {
         var yearEl = document.getElementById('year');
         if (yearEl) yearEl.textContent = new Date().getFullYear();
-      } catch (e) {}
+      } catch (e) { }
 
       var btn = document.getElementById('themeToggle');
       var menu = document.getElementById('themeMenu');
@@ -636,7 +641,7 @@
         try {
           var stored = localStorage.getItem('theme');
           if (stored === 'dark' || stored === 'light') return stored;
-        } catch (e) {}
+        } catch (e) { }
         return isDark() ? 'dark' : 'light';
       }
 
@@ -664,7 +669,7 @@
       function applyTheme(mode) {
         if (mode === 'dark') document.documentElement.classList.add('dark');
         else document.documentElement.classList.remove('dark');
-        try { localStorage.setItem('theme', mode); } catch (e) {}
+        try { localStorage.setItem('theme', mode); } catch (e) { }
         paintMenu();
         syncChecks();
       }
