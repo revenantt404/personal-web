@@ -2203,18 +2203,38 @@
 
       header>div {
         flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 18px !important;
+        align-items: stretch !important;
+        gap: 14px !important;
+      }
+
+      /* brand left, avatar right on first row */
+      header>div>a:first-child {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+      }
+
+      /* nav + profile row */
+      header>div>div {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        gap: 10px !important;
+        min-width: 0 !important;
       }
 
       header nav {
-        width: 100%;
+        flex: 1 1 auto !important;
+        width: auto !important;
         max-width: 100%;
+        min-width: 0 !important;
         gap: 14px !important;
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
-        padding-bottom: 6px;
+        padding-bottom: 2px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
       }
@@ -2229,11 +2249,21 @@
         line-height: 32px;
       }
 
-      header nav button {
-        flex: 0 0 auto;
-        margin-left: auto !important;
-        min-width: 32px;
-        min-height: 32px;
+      #themeToggle {
+        flex: 0 0 auto !important;
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+        margin-left: 0 !important;
+      }
+
+      #themeToggle img {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        object-fit: cover !important;
+        display: block !important;
       }
 
       main {
@@ -2294,6 +2324,11 @@
       mark.hl-pink,
       mark.hl-yellow {
         padding: 1px 3px;
+      }
+
+      /* don't wrap header controls; allow wrap elsewhere if needed */
+      header .flex.items-center {
+        flex-wrap: nowrap !important;
       }
 
       footer {
@@ -2549,7 +2584,6 @@
       </div>
 
 
-    </div>
 
     <nav class="mt-16 border-t hairline pt-8 text-[14px]">
       <a href="/jurnal"
