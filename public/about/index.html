@@ -49,49 +49,132 @@
     html.dark mark.hl-green { background: #064e3b; color: #e9e6e2; }
     html.dark mark.hl-pink { background: #831843; color: #e9e6e2; }
     html.dark mark.hl-yellow { background: #713f12; color: #e9e6e2; }
-    @media(max-width:640px){.wrap{padding-left:22px;padding-right:22px}header{padding-top:28px;padding-bottom:26px}.nav{align-items:flex-start;flex-direction:column;gap:18px}.links{width:100%;overflow-x:auto;white-space:nowrap;gap:16px;padding-bottom:6px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.links a{flex:0 0 auto;font-size:13.5px;line-height:32px}#themeToggle{flex:0 0 auto;width:32px;height:32px;min-width:32px;min-height:32px;margin-left:0}#themeToggle img{width:100%;height:100%;max-width:none;object-fit:cover;display:block}header>div{align-items:stretch!important}header>div>div{width:100%;display:flex;flex-wrap:nowrap;align-items:center;gap:10px;min-width:0}header nav{flex:1 1 auto;min-width:0;width:auto}.title{font-size:clamp(38px,12vw,48px)}.lead{font-size:17px}.kicker{margin-top:28px}.essay{margin-top:54px;padding-top:34px}.essay p{font-size:16.5px;line-height:1.85}.essay h2{font-size:25px}.essay blockquote{font-size:21px}}
+    @media(max-width:640px){.wrap{padding-left:22px;padding-right:22px}.title{font-size:clamp(38px,12vw,48px)}.lead{font-size:17px}.kicker{margin-top:28px}.essay{margin-top:54px;padding-top:34px}.essay p{font-size:16.5px;line-height:1.85}.essay h2{font-size:25px}.essay blockquote{font-size:21px}}
   </style>
   <script>if(localStorage.theme==='dark'||(!('theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}</script>
 
-  <style id="theme-mobile-fix">
+  <style id="mobile-optimizations">
+    /* Keep the About navbar identical to Journal, Rig, and Gallery on mobile. */
     @media (max-width: 640px) {
-      header > div {
+      html,
+      body {
+        overflow-x: hidden;
+      }
+
+      body {
+        text-size-adjust: 100%;
+        -webkit-text-size-adjust: 100%;
+      }
+
+      header {
+        padding-top: 28px !important;
+        padding-bottom: 26px !important;
+      }
+
+      header>div {
         flex-direction: column !important;
         align-items: stretch !important;
         gap: 14px !important;
       }
-      header > div > div {
+
+      header>div>a:first-child {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+      }
+
+      header>div>div {
         width: 100% !important;
         display: flex !important;
+        flex-direction: row !important;
         flex-wrap: nowrap !important;
         align-items: center !important;
         gap: 10px !important;
         min-width: 0 !important;
       }
+
       header nav {
         flex: 1 1 auto !important;
-        min-width: 0 !important;
         width: auto !important;
+        max-width: 100%;
+        min-width: 0 !important;
+        gap: 14px !important;
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
+        padding-bottom: 2px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
       }
-      header nav::-webkit-scrollbar { display: none; }
+
+      header nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      header nav a {
+        flex: 0 0 auto;
+        font-size: 13.5px;
+        line-height: 32px;
+      }
+
       #themeToggle {
         flex: 0 0 auto !important;
         width: 32px !important;
         height: 32px !important;
         min-width: 32px !important;
         min-height: 32px !important;
+        margin-left: 0 !important;
       }
+
       #themeToggle img {
         width: 100% !important;
         height: 100% !important;
         max-width: none !important;
         object-fit: cover !important;
         display: block !important;
+      }
+
+      main {
+        padding-bottom: 64px !important;
+      }
+
+      p,
+      li,
+      blockquote {
+        overflow-wrap: anywhere;
+      }
+
+      img,
+      video,
+      canvas,
+      svg {
+        max-width: 100%;
+        height: auto;
+      }
+
+      input,
+      textarea,
+      button,
+      a {
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      header .flex.items-center {
+        flex-wrap: nowrap !important;
+      }
+
+      footer {
+        gap: 8px !important;
+      }
+    }
+
+    @media (max-width: 380px) {
+      header nav {
+        gap: 12px !important;
+      }
+
+      header nav a {
+        font-size: 13px;
       }
     }
   </style>
