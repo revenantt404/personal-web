@@ -3,62 +3,46 @@ const path = require('path');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
+const publicDir = path.join(__dirname, 'public');
 
-// Serve static files
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(publicDir));
 app.use(express.json());
 
-// Routes
-app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'index.html'));
-});
+// Clean URL helpers for folder/index.html pages
+function sendPage(res, ...parts) {
+  res.sendFile(path.join(publicDir, ...parts));
+}
 
-app.get('/rig', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'rig.html'));
-});
+app.get('/', (req, res) => sendPage(res, 'index.html'));
 
-app.get('/tentang', (req, res) => {
-  res.redirect(301, '/about');
-});
-app.get('/about', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'about.html'));
-});
+app.get('/about', (req, res) => sendPage(res, 'about', 'index.html'));
+app.get('/tentang', (req, res) => res.redirect(301, '/about'));
 
-app.get('/jurnal', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'journal.html'));
-});
-app.get('/journal', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'journal.html'));
-});
+app.get('/jurnal', (req, res) => sendPage(res, 'jurnal', 'index.html'));
+app.get('/journal', (req, res) => res.redirect(301, '/jurnal'));
+app.get('/journal.html', (req, res) => res.redirect(301, '/jurnal'));
+app.get('/projects', (req, res) => res.redirect(301, '/jurnal'));
 
-// legacy: /projects -> redirect ke /jurnal
-app.get('/projects', (req, res) => {
-  res.redirect(301, '/jurnal');
-});
+app.get('/gallery', (req, res) => sendPage(res, 'gallery', 'index.html'));
+app.get('/rig', (req, res) => sendPage(res, 'rig', 'index.html'));
 
-app.get('/gallery', (req, res) => {
-  res.sendFile(path.join(__dirname, 'public', 'gallery.html'));
-});
-
-// Simple API untuk contact form (opsional)
+// Contact form (optional)
 app.post('/api/contact', (req, res) => {
   const { name, email, message } = req.body;
-  console.log('Pesan kontak baru:', { name, email, message });
-  // Di sini kamu bisa integrasi ke Email, Notion, Database, dll.
-  res.json({ 
-    success: true, 
-    message: 'Terima kasih! Pesanmu sudah diterima.' 
+  console.log('New contact message:', { name, email, message });
+  res.json({
+    success: true,
+    message: 'Thanks! Your message has been received.'
   });
 });
 
-// Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', time: new Date().toISOString() });
 });
 
-// 404 fallback
+// 404
 app.use((req, res) => {
-  res.status(404).sendFile(path.join(__dirname, 'public', 'index.html'));
+  res.status(404).sendFile(path.join(publicDir, '404.html'));
 });
 
 app.listen(PORT, () => {

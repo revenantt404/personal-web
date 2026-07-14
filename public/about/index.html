@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Kevin</title>
+  <meta name="description" content="About Kevin, a 19-year-old ENTJ-T from Jakarta who likes coding and tinkering until things work.">
+  
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Instrument Sans"', 'Inter', 'system-ui', 'sans-serif'],
+            display: ['"EB Garamond"', 'serif'],
+          },
+          colors: {
+            paper: '#faf9f7',
+            ink: '#1a1a1a',
+            mute: '#6b6b6b',
+            line: '#e6e3df',
+            ck: '#111111'
+          }
+        }
+      }
+    }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root{--paper:#faf9f7;--ink:#1a1a1a;--muted:#6b6b6b;--soft:#3a3a3a;--line:#e6e3df;--card:#f3f1ec;--accent:#a66a05}
+    html.dark{--paper:#141414;--ink:#e9e6e2;--muted:#a7a39d;--soft:#c5c2bc;--line:#2a2a2a;--card:#1d1d1d;--accent:#d9ad57}
+    *{box-sizing:border-box}
+    ::selection{background:var(--ink);color:var(--paper)}
+    a{color:inherit;text-decoration:none}.hairline{border-color:var(--line)}
+    .kicker{margin-top:48px;color:var(--muted);font-size:12px;letter-spacing:.12em}.title{font-family:"EB Garamond",Georgia,serif;font-size:56px;line-height:1.02;font-weight:300;letter-spacing:-.025em;margin:16px 0 0}.lead{font-size:19px;line-height:1.75;color:var(--soft);max-width:620px;margin:24px 0 0}.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}.pill{border:1px solid var(--line);border-radius:999px;padding:7px 12px;color:var(--muted);font-size:12.5px;background:rgba(0,0,0,.012)}.dark .pill{background:rgba(255,255,255,.025)}
+    .essay{max-width:620px;margin:72px 0 0;border-top:1px solid var(--line);padding-top:42px}.essay p{font-size:18px;line-height:1.9;color:var(--soft);margin:0 0 1.45em}.essay p:first-child::first-letter{font-family:"EB Garamond",Georgia,serif;font-size:62px;line-height:.86;float:left;padding-right:9px;color:var(--ink)}.essay h2{font-family:"EB Garamond",Georgia,serif;font-weight:400;font-size:29px;line-height:1.18;margin:2.1em 0 .7em;color:var(--ink);letter-spacing:-.015em}.essay blockquote{margin:2em 0;padding:18px 0 18px 22px;border-left:2px solid var(--line);font-family:"EB Garamond",Georgia,serif;font-size:24px;line-height:1.45;color:var(--ink)}
+
+    @media(min-width:641px){.essay p:first-child::first-letter{font-size:70px;line-height:.76;margin-top:.065em;padding-right:11px}}
+    .note{margin-top:52px;padding:22px;border:1px solid var(--line);border-radius:18px;background:var(--card);color:var(--muted);font-size:14.5px;line-height:1.7}.note strong{color:var(--ink);font-weight:500}.back{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-top:56px;padding-top:28px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted)}.back a{text-decoration:underline;text-underline-offset:4px;text-decoration-color:var(--line)}.back a:hover{color:var(--ink);text-decoration-color:var(--ink)}
+    mark.hl-green { background: #dcfce7; padding: 2px 5px; border-radius: 3px; }
+    mark.hl-pink { background: #fce7f3; padding: 2px 5px; border-radius: 3px; }
+    mark.hl-yellow { background: #fef9c3; padding: 2px 5px; border-radius: 3px; }
+    html.dark mark.hl-green { background: #064e3b; color: #e9e6e2; }
+    html.dark mark.hl-pink { background: #831843; color: #e9e6e2; }
+    html.dark mark.hl-yellow { background: #713f12; color: #e9e6e2; }
+    @media(max-width:640px){.wrap{padding-left:22px;padding-right:22px}header{padding-top:28px;padding-bottom:26px}.nav{align-items:flex-start;flex-direction:column;gap:18px}.links{width:100%;overflow-x:auto;white-space:nowrap;gap:16px;padding-bottom:6px;scrollbar-width:none}.links::-webkit-scrollbar{display:none}.links a{flex:0 0 auto;font-size:13.5px;line-height:32px}#themeToggle{flex:0 0 auto;width:32px;height:32px;min-width:32px;min-height:32px;margin-left:0}#themeToggle img{width:100%;height:100%;max-width:none;object-fit:cover;display:block}header>div{align-items:stretch!important}header>div>div{width:100%;display:flex;flex-wrap:nowrap;align-items:center;gap:10px;min-width:0}header nav{flex:1 1 auto;min-width:0;width:auto}.title{font-size:clamp(38px,12vw,48px)}.lead{font-size:17px}.kicker{margin-top:28px}.essay{margin-top:54px;padding-top:34px}.essay p{font-size:16.5px;line-height:1.85}.essay h2{font-size:25px}.essay blockquote{font-size:21px}}
+  </style>
+  <script>if(localStorage.theme==='dark'||(!('theme'in localStorage)&&window.matchMedia('(prefers-color-scheme: dark)').matches)){document.documentElement.classList.add('dark')}</script>
+
+  <style id="theme-mobile-fix">
+    @media (max-width: 640px) {
+      header > div {
+        flex-direction: column !important;
+        align-items: stretch !important;
+        gap: 14px !important;
+      }
+      header > div > div {
+        width: 100% !important;
+        display: flex !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        gap: 10px !important;
+        min-width: 0 !important;
+      }
+      header nav {
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        width: auto !important;
+        overflow-x: auto;
+        overflow-y: hidden;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+      }
+      header nav::-webkit-scrollbar { display: none; }
+      #themeToggle {
+        flex: 0 0 auto !important;
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+      }
+      #themeToggle img {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        object-fit: cover !important;
+        display: block !important;
+      }
+    }
+  </style>
+</head>
+<body class="bg-paper text-ink dark:bg-[#141414] dark:text-[#e9e6e2] font-sans text-[16px] leading-relaxed">
+    <header class="max-w-[720px] mx-auto px-6 md:px-0 pt-10 md:pt-16 pb-8">
+    <div class="flex items-center justify-between gap-4">
+      <a href="/" class="text-[18px] tracking-tight font-[500]">kevin.</a>
+      <div class="flex items-center gap-3 md:gap-4 min-w-0">
+        <nav class="flex items-center gap-5 md:gap-6 text-[14px] md:text-[14.5px] text-mute dark:text-[#a7a39d]">
+          <a href="/about" class="text-ink dark:text-[#e9e6e2]">About</a>
+          <a href="/jurnal" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Journal</a>
+          <a href="/rig" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Rig</a>
+          <a href="/gallery" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Gallery</a>
+          <a href="/#kontak" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Contact</a>
+        </nav>
+        <button id="themeToggle" type="button" aria-label="Theme settings" aria-haspopup="true" aria-expanded="false"
+          class="ml-1 w-8 h-8 shrink-0 rounded-full border hairline overflow-hidden flex items-center justify-center hover:opacity-90 transition p-0 bg-[#ecebe8] dark:bg-[#222] cursor-pointer aspect-square">
+          <img src="/images/profile-silhouette.png" alt="Profile" class="w-full h-full object-cover pointer-events-none" width="32" height="32" draggable="false">
+        </button>
+      </div>
+    </div>
+  </header>
+  <div id="themeMenu" role="menu" aria-label="Theme" hidden
+    style="display:none; position:fixed; z-index:9999; min-width:160px; border-radius:12px; padding:6px 0; font-size:13px;">
+    <button type="button" role="menuitemradio" data-theme="light" class="theme-opt"
+      style="display:flex; width:100%; text-align:left; padding:10px 14px; background:transparent; border:0; cursor:pointer; align-items:center; justify-content:space-between; gap:12px; font:inherit; color:inherit;">
+      <span>Light mode</span>
+      <span class="theme-check" hidden style="font-size:12px;">✓</span>
+    </button>
+    <button type="button" role="menuitemradio" data-theme="dark" class="theme-opt"
+      style="display:flex; width:100%; text-align:left; padding:10px 14px; background:transparent; border:0; cursor:pointer; align-items:center; justify-content:space-between; gap:12px; font:inherit; color:inherit;">
+      <span>Dark mode</span>
+      <span class="theme-check" hidden style="font-size:12px;">✓</span>
+    </button>
+  </div>
+
+  <main class="max-w-[720px] mx-auto px-6 md:px-0 pb-24">
+    <section>
+      <p class="text-[13px] text-mute dark:text-[#a7a39d] mb-4">/about — my story</p>
+      <h1 class="title">From internet cafes, keyboards, and curiosity.</h1>
+      <p class="lead">I'm Kevin, a 19-year-old guy from Jakarta. My story with computers started long before I understood what IT was. It began with internet cafes, games, a home PC, and a curiosity that got harder and harder to stop.</p>
+      <div class="meta">
+        <span class="pill">Story of My Life</span>
+        <span class="pill">Nerd</span>
+        <span class="pill">Tech</span>
+      </div>
+    </section>
+
+    <article class="essay">
+      <p>I didn't meet computers in class, from thick books, or from some polished dream. Everything started at an internet cafe. I was only four — an age that should have been all running around without a care. But where I lived, cafes were packed. Kids, teens, adults — everyone had their own screen, headset, and little world.</p>
+
+      <p>At first I just went with the flow. Played games like any other kid. Click here, mash there, lose, try again. Nothing looked special. Looking back now, something quietly formed there: <mark class="hl-green">my small hands got used to a keyboard, my eyes started reading screen patterns, and my head began to understand that the internet was not just a place to play — it was a door to many things.</mark></p>
+
+      <h2>First computer: meant for learning. Ended up for games.</h2>
+      <p>When I was five, my family got me a computer. The plan was clear: so I could study. Sounds good, right? In reality… I was still a kid. That PC became a game machine more often than a learning machine. I played more, tinkered more, got more curious. Sometimes I meant to open something “useful,” and still ended up back in a game.</p>
+
+      <p>Funny enough, a lot still got in without me noticing. I learned how to search. Open folders. Install things. Learned that when something errors, you don't panic first — you click, read, try again. Small things that feel normal to adults, but at that age, not every kid gets them.</p>
+
+      <blockquote style="border-left: 2px solid var(--line); padding-left: 24px; margin: 40px 0; font-family: 'EB Garamond', serif; font-size: 26px; line-height: 1.4; color: var(--ink);">
+        <span style="font-style:italic;">The quieter you become,</span> the more you are able to hear.
+        <div style="font-family:'Georgia', 'EB Garamond', serif; font-size: 15px; color: var(--muted); font-style: normal; margin-top: 14px;">
+          Jalaluddin Rumi
+        </div>
+      </blockquote>
+
+      <h2>Then there was an older brother who got hardware.</h2>
+      <p>One person left a big mark: an uncle I already treated like an older brother. He was really good with computers, especially hardware. To little me, someone who could tear down and rebuild parts, who understood the machine from the inside, looked almost like a magician. The difference was his trick wasn't magic — he actually knew.</p>
+
+      <p>From him I saw the physical side: cables, cases, parts, heat, fan noise, everything that makes a screen light up. Somehow my path slowly bent toward software. He was strong on hardware; I got more curious about what happens after the machine boots. Programs. Systems. How something can run only because of lines of instructions people wrote.</p>
+
+      <p>If I had to split it, maybe I'm 8 software and 2 hardware. He's the reverse. I find that interesting. Two sides of the same world: <mark class="hl-yellow">he understands the machine's body; I learned the language of its mind.</mark></p>
+
+      <h2>Started coding in 6th grade.</h2>
+      <p>If internet cafes introduced me to computers, 6th grade made me realize a computer isn't only for using — you can build with it. That's when I first touched coding. It wasn't clean at first. Lots of trial and error, lots of confusion, lots of “how is this broken when I only changed a little?” Those small errors are exactly what made me more curious.</p>
+
+      <p>In junior high that curiosity stayed. I tinkered with software more, hunted tutorials, read random stuff, and slowly got the way of thinking. Not instantly good — but over time a pattern formed: <mark class="hl-green">if there's a problem, break it down. If you're stuck, try another path. If it still fails, rest a bit and try again.</mark></p>
+
+      <p>In vocational high school I joined Software Engineering (RPL). The path that used to feel like a hobby finally had a name. It sounds very formal, but for me it was simple: I was finally somewhere close to the thing that made me curious since I was little.</p>
+
+      <h2>A regular nerd, sometimes trying a little too hard to look cool.</h2>
+      <p>Outside all the computer stuff, I'm just a regular nerdy guy. Glasses, overthinks a lot, and sometimes too serious about things other people find small. One of the most visible parts of me is how I talk. I often sound formal, stiff — even too dictionary-correct for a casual chat.</p>
+
+      <p>It didn't appear overnight. From junior high I joined orgs, and that habit continued into vocational school. In meetings I got used to arranging sentences before speaking. Clear, neat, polite, easy for many people to follow. Over time that voice stuck. Even outside meetings, the language followed me into daily life.</p>
+
+      <p>In professional settings that habit often helps. I can explain things more cleanly, choose words carefully, and sound prepared. In social chats the effect is sometimes funny. Someone is just joking around, and I answer like I'm delivering a report. Some people say my vocabulary is good; others laugh because I sound too serious.</p>
+
+      <p>I also have another mode. Sometimes when the mood hits, I want to look a bit neater, a bit cooler: messy hair, glasses off, a little style. Then I go back to the usual me — a glasses nerd who is sometimes formal, sometimes awkward, still trying to show up well for people.</p>
+
+      <p>I'm not trying to look the most unique. The opposite. <mark class="hl-pink">I'm just an ordinary guy slowly learning to accept the small parts of himself.</mark> A bit stiff, a bit formal, a bit too much thinking. That's me. A little weird — and I'm proud of it, because it's also part of my path.</p>
+
+      <h2>When it comes to feelings, I'm not that good.</h2>
+      <p>My love life isn't something to brag about either. I'm often slow to notice how other people feel. Sometimes I only get it after everything has passed. Sometimes I'm so focused on logic, work, or things I can measure that I forget people aren't always readable like systems.</p>
+
+      <p>Maybe that's why I often choose work, learning, making things. Not because I'm anti-feelings, but because in technical worlds at least I know where to start. Error? Find the cause. Broken? Debug. Not done? Try again. With the heart, I always lose.</p>
+
+      <blockquote><em>Maybe I'm not built for love</em>. If I knew that I could reach you, I would go.<br><span style="display:block;margin-top:10px;font-size:15px;color:var(--muted);font-style:normal">Seafret, Atlantis</span></blockquote>
+
+      <p>So if this page has to sum me up, maybe this: <mark class="hl-green">I grew up from internet cafes, was shaped by a home PC, started coding in 6th grade, kept tinkering through junior high, joined vocational software engineering, then fell deeper into software.</mark> I'm an ordinary 19-year-old, a nerd with glasses, sometimes trying a little too hard to look cool, still learning the world outside the screen.</p>
+
+      <p>There's no big conclusion here. I don't feel like someone important yet either. But from a four-year-old just playing at a cafe, to 6th grade first touching code, to now starting to build my own tools — one line never broke: curiosity. <mark class="hl-yellow">And as long as that feeling is still there, I'll probably keep coming back to the keyboard.</mark></p>
+
+      <div class="note">
+        <strong>Note:</strong> this is still an early version of the about page. Later I can add more: school years, first projects, computer setup, people who shaped me, and why this website was finally made.
+      </div>
+
+      <div class="back">
+        <a href="/">← back to home</a>
+        <a href="/jurnal">continue to journal →</a>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    (function () {
+      try {
+        var yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+      } catch (e) {}
+
+      var btn = document.getElementById('themeToggle');
+      var menu = document.getElementById('themeMenu');
+      if (!btn || !menu) return;
+
+      if (menu.parentElement !== document.body) {
+        document.body.appendChild(menu);
+      }
+
+      function isDark() {
+        return document.documentElement.classList.contains('dark');
+      }
+
+      function getTheme() {
+        try {
+          var stored = localStorage.getItem('theme');
+          if (stored === 'dark' || stored === 'light') return stored;
+        } catch (e) {}
+        return isDark() ? 'dark' : 'light';
+      }
+
+      function paintMenu() {
+        var dark = isDark();
+        menu.style.background = dark ? '#1d1d1d' : '#faf9f7';
+        menu.style.color = dark ? '#e9e6e2' : '#1a1a1a';
+        menu.style.border = '1px solid ' + (dark ? '#2a2a2a' : '#e6e3df');
+        menu.style.boxShadow = 'none';
+      }
+
+      function syncChecks() {
+        var theme = getTheme();
+        var opts = menu.querySelectorAll('.theme-opt');
+        for (var i = 0; i < opts.length; i++) {
+          var opt = opts[i];
+          var on = opt.getAttribute('data-theme') === theme;
+          var check = opt.querySelector('.theme-check');
+          if (check) check.hidden = !on;
+          opt.setAttribute('aria-checked', on ? 'true' : 'false');
+          opt.style.fontWeight = '400';
+        }
+      }
+
+      function applyTheme(mode) {
+        if (mode === 'dark') document.documentElement.classList.add('dark');
+        else document.documentElement.classList.remove('dark');
+        try { localStorage.setItem('theme', mode); } catch (e) {}
+        paintMenu();
+        syncChecks();
+      }
+
+      function positionMenu() {
+        var r = btn.getBoundingClientRect();
+        menu.style.visibility = 'hidden';
+        menu.style.display = 'block';
+        var mw = menu.offsetWidth || 160;
+        var mh = menu.offsetHeight || 90;
+        menu.style.visibility = 'visible';
+
+        var left = r.right - mw;
+        if (left < 12) left = 12;
+        if (left + mw > window.innerWidth - 12) left = window.innerWidth - mw - 12;
+
+        var top = r.bottom + 10;
+        if (top + mh > window.innerHeight - 12) {
+          top = Math.max(12, r.top - mh - 10);
+        }
+
+        menu.style.top = Math.round(top) + 'px';
+        menu.style.left = Math.round(left) + 'px';
+      }
+
+      var open = false;
+
+      function openMenu() {
+        paintMenu();
+        syncChecks();
+        menu.hidden = false;
+        menu.style.display = 'block';
+        positionMenu();
+        btn.setAttribute('aria-expanded', 'true');
+        open = true;
+      }
+
+      function closeMenu() {
+        menu.hidden = true;
+        menu.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+        open = false;
+      }
+
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (open) closeMenu();
+        else openMenu();
+      });
+
+      var opts = menu.querySelectorAll('.theme-opt');
+      for (var i = 0; i < opts.length; i++) {
+        opts[i].addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          applyTheme(this.getAttribute('data-theme'));
+          closeMenu();
+        });
+        opts[i].addEventListener('mouseenter', function () {
+          this.style.background = isDark() ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)';
+        });
+        opts[i].addEventListener('mouseleave', function () {
+          this.style.background = 'transparent';
+        });
+      }
+
+      document.addEventListener('click', function (e) {
+        if (!open) return;
+        if (btn.contains(e.target) || menu.contains(e.target)) return;
+        closeMenu();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && open) closeMenu();
+      });
+
+      window.addEventListener('resize', function () {
+        if (open) positionMenu();
+      });
+      window.addEventListener('scroll', function () {
+        if (open) positionMenu();
+      }, true);
+
+      applyTheme(getTheme());
+      closeMenu();
+    })();
+
+
+
+
+
+  </script>
+</body>
+</html>

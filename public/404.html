@@ -1,38 +1,37 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>404 — Page Not Found</title>
-  <meta name="description" content="Halaman tidak ditemukan.">
+  <meta name="description" content="Page not found.">
 
-  <!-- SPA-style redirect for clean URLs -->
+  <!-- Clean-URL fallback for static hosts (GitHub Pages, etc.) -->
   <script>
     (function () {
-      // Map clean URLs to actual HTML files
       var routes = {
-        '/rig': '/rig.html',
-        '/about': '/about.html',
-        '/tentang': '/about.html',
-        '/jurnal': '/journal.html',
-        '/journal': '/journal.html',
-        '/gallery': '/gallery.html',
-        '/projects': '/journal.html'
+        '/rig': '/rig/',
+        '/rig.html': '/rig/',
+        '/about': '/about/',
+        '/about.html': '/about/',
+        '/tentang': '/about/',
+        '/jurnal': '/jurnal/',
+        '/journal': '/jurnal/',
+        '/journal.html': '/jurnal/',
+        '/gallery': '/gallery/',
+        '/gallery.html': '/gallery/',
+        '/projects': '/jurnal/'
       };
 
-      var path = window.location.pathname;
+      var path = window.location.pathname.replace(/\/+$/, '') || '/';
 
-      // Check exact route match
       if (routes[path]) {
-        window.location.replace(routes[path]);
+        window.location.replace(routes[path] + window.location.search + window.location.hash);
         return;
       }
 
-      // Check if path starts with /jurnal/ (journal articles)
-      if (path.indexOf('/jurnal/') === 0) {
-        // Already correct path, let it 404 naturally if file doesn't exist
-      }
+      // /jurnal/foo -> keep as-is (folder already exists for articles)
     })();
   </script>
 
@@ -95,11 +94,11 @@
 <body class="min-h-screen flex items-center justify-center px-6">
   <div class="text-center max-w-md fade-in">
     <p class="text-8xl font-display font-bold glitch mb-6 tracking-tight" style="color: #faf9f7;">404</p>
-    <p class="text-lg text-gray-400 mb-2">Halaman tidak ditemukan.</p>
-    <p class="text-sm text-gray-500 mb-8">Mungkin kamu salah jalan, atau halaman ini sudah dipindahkan.</p>
+    <p class="text-lg text-gray-400 mb-2">Page not found.</p>
+    <p class="text-sm text-gray-500 mb-8">You may have taken a wrong turn, or this page has moved.</p>
     <a href="/"
       class="inline-block px-6 py-2.5 text-sm font-medium border border-gray-600 rounded-full text-gray-300 hover:bg-white hover:text-black transition-all duration-300">
-      ← Kembali ke Beranda
+      ← Back to Home
     </a>
   </div>
 </body>

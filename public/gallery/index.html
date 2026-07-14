@@ -1,11 +1,11 @@
 <!DOCTYPE html>
-<html lang="id" class="scroll-smooth">
+<html lang="en" class="scroll-smooth">
 
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Gallery — Kevin</title>
-  <meta name="description" content="Galeri foto Kevin — retail, coding, daily life.">
+  <meta name="description" content="Kevin's photo gallery — retail, coding, daily life.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -104,18 +104,38 @@
 
       header>div {
         flex-direction: column !important;
-        align-items: flex-start !important;
-        gap: 18px !important;
+        align-items: stretch !important;
+        gap: 14px !important;
+      }
+
+      /* brand left, avatar right on first row */
+      header>div>a:first-child {
+        display: inline-flex;
+        align-items: center;
+        min-height: 32px;
+      }
+
+      /* nav + profile row */
+      header>div>div {
+        width: 100% !important;
+        display: flex !important;
+        flex-direction: row !important;
+        flex-wrap: nowrap !important;
+        align-items: center !important;
+        gap: 10px !important;
+        min-width: 0 !important;
       }
 
       header nav {
-        width: 100%;
+        flex: 1 1 auto !important;
+        width: auto !important;
         max-width: 100%;
+        min-width: 0 !important;
         gap: 14px !important;
         overflow-x: auto;
         overflow-y: hidden;
         white-space: nowrap;
-        padding-bottom: 6px;
+        padding-bottom: 2px;
         -webkit-overflow-scrolling: touch;
         scrollbar-width: none;
       }
@@ -130,11 +150,21 @@
         line-height: 32px;
       }
 
-      header nav button {
-        flex: 0 0 auto;
-        margin-left: auto !important;
-        min-width: 32px;
-        min-height: 32px;
+      #themeToggle {
+        flex: 0 0 auto !important;
+        width: 32px !important;
+        height: 32px !important;
+        min-width: 32px !important;
+        min-height: 32px !important;
+        margin-left: 0 !important;
+      }
+
+      #themeToggle img {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: none !important;
+        object-fit: cover !important;
+        display: block !important;
       }
 
       main {
@@ -194,6 +224,11 @@
         display: none;
       }
 
+      /* don't wrap header controls; allow wrap elsewhere if needed */
+      header .flex.items-center {
+        flex-wrap: nowrap !important;
+      }
+
       footer {
         gap: 8px !important;
       }
@@ -216,38 +251,53 @@
 </head>
 
 <body class="bg-paper text-ink dark:bg-[#141414] dark:text-[#e9e6e2] font-sans text-[16px] leading-relaxed">
-  <header class="max-w-[720px] mx-auto px-6 md:px-0 pt-10 md:pt-16 pb-8">
-    <div class="flex items-center justify-between">
+    <header class="max-w-[720px] mx-auto px-6 md:px-0 pt-10 md:pt-16 pb-8">
+    <div class="flex items-center justify-between gap-4">
       <a href="/" class="text-[18px] tracking-tight font-[500]">kevin.</a>
-      <nav class="flex items-center gap-5 md:gap-6 text-[14px] md:text-[14.5px] text-mute dark:text-[#a7a39d]">
-        <a href="/about" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Tentang</a>
-        <a href="/jurnal" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Jurnal</a>
-        <a href="/rig" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Rig</a>
-        <a href="/gallery" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Gallery</a>
-        <a href="/#kontak" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Kontak</a>
-        <button id="themeToggle" aria-label="Toggle theme"
-          class="ml-2 w-8 h-8 rounded-full border hairline flex items-center justify-center hover:bg-black/[0.03] dark:hover:bg-white/[0.06] transition">
-          <span class="text-[11px]" id="themeIcon">○</span>
+      <div class="flex items-center gap-3 md:gap-4 min-w-0">
+        <nav class="flex items-center gap-5 md:gap-6 text-[14px] md:text-[14.5px] text-mute dark:text-[#a7a39d]">
+          <a href="/about" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">About</a>
+          <a href="/jurnal" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Journal</a>
+          <a href="/rig" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Rig</a>
+          <a href="/gallery" class="text-ink dark:text-[#e9e6e2]">Gallery</a>
+          <a href="/#kontak" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Contact</a>
+        </nav>
+        <button id="themeToggle" type="button" aria-label="Theme settings" aria-haspopup="true" aria-expanded="false"
+          class="ml-1 w-8 h-8 shrink-0 rounded-full border hairline overflow-hidden flex items-center justify-center hover:opacity-90 transition p-0 bg-[#ecebe8] dark:bg-[#222] cursor-pointer aspect-square">
+          <img src="/images/profile-silhouette.png" alt="Profile" class="w-full h-full object-cover pointer-events-none" width="32" height="32" draggable="false">
         </button>
-      </nav>
+      </div>
     </div>
   </header>
+  <div id="themeMenu" role="menu" aria-label="Theme" hidden
+    style="display:none; position:fixed; z-index:9999; min-width:160px; border-radius:12px; padding:6px 0; font-size:13px;">
+    <button type="button" role="menuitemradio" data-theme="light" class="theme-opt"
+      style="display:flex; width:100%; text-align:left; padding:10px 14px; background:transparent; border:0; cursor:pointer; align-items:center; justify-content:space-between; gap:12px; font:inherit; color:inherit;">
+      <span>Light mode</span>
+      <span class="theme-check" hidden style="font-size:12px;">✓</span>
+    </button>
+    <button type="button" role="menuitemradio" data-theme="dark" class="theme-opt"
+      style="display:flex; width:100%; text-align:left; padding:10px 14px; background:transparent; border:0; cursor:pointer; align-items:center; justify-content:space-between; gap:12px; font:inherit; color:inherit;">
+      <span>Dark mode</span>
+      <span class="theme-check" hidden style="font-size:12px;">✓</span>
+    </button>
+  </div>
 
   <main class="max-w-[720px] mx-auto px-6 md:px-0 pb-24">
     <p class="text-[13px] text-mute dark:text-[#a7a39d] mb-4">/gallery — 2024—2026</p>
     <div class="flex flex-wrap items-end justify-between gap-4 mb-8">
       <div>
         <h1 class="font-display text-[40px] md:text-[54px] leading-[1.05] font-[300]">Gallery</h1>
-        <p class="mt-3 text-[15.5px] text-[#3a3a3a] dark:text-[#c5c2bc] max-w-[480px]">Potongan hari-hari: shift retail,
-          ngoding malam, setup rumah, dan jalan-jalan Jakarta. Minimal edit, apa adanya.</p>
+        <p class="mt-3 text-[15.5px] text-[#3a3a3a] dark:text-[#c5c2bc] max-w-[480px]">Slices of ordinary days: retail shifts,
+          late-night coding, home setup, and walks around Jakarta. Minimal edits, as-is.</p>
       </div>
-      <div class="text-[12px] text-mute dark:text-[#8f8b85]">8 foto · update Jul 2026</div>
+      <div class="text-[12px] text-mute dark:text-[#8f8b85]">8 photos · updated Jul 2026</div>
     </div>
 
     <!-- filters -->
     <div class="flex flex-wrap gap-2 text-[12px] mb-8 border-b hairline pb-5">
       <button data-filter="all"
-        class="filter-btn px-3 py-1.5 rounded-full bg-ink text-paper dark:bg-[#e9e6e2] dark:text-[#141414]">Semua</button>
+        class="filter-btn px-3 py-1.5 rounded-full bg-ink text-paper dark:bg-[#e9e6e2] dark:text-[#141414]">All</button>
       <button data-filter="retail"
         class="filter-btn px-3 py-1.5 rounded-full border hairline text-mute dark:text-[#a7a39d] hover:text-ink">Retail</button>
       <button data-filter="code"
@@ -256,16 +306,16 @@
         class="filter-btn px-3 py-1.5 rounded-full border hairline text-mute dark:text-[#a7a39d] hover:text-ink">Rig</button>
       <button data-filter="daily"
         class="filter-btn px-3 py-1.5 rounded-full border hairline text-mute dark:text-[#a7a39d] hover:text-ink">Daily</button>
-      <span class="ml-auto text-[11px] text-mute dark:text-[#7f7b75] hidden sm:block">klik foto untuk full →</span>
+      <span class="ml-auto text-[11px] text-mute dark:text-[#7f7b75] hidden sm:block">click a photo for full view →</span>
     </div>
 
     <!-- masonry gallery -->
     <div class="mason" id="galleryGrid">
       <!-- PINNED FAVORITE -->
-      <figure class="mason-item group cursor-pointer" data-cat="daily" data-full="images/gallery/banana-quote.png">
+      <figure class="mason-item group cursor-pointer" data-cat="daily" data-full="/images/gallery/banana-quote.png">
         <div class="rounded-[18px] overflow-hidden bg-[#ecebe8] dark:bg-[#1e1e1e] aspect-square relative"
-          style="background-image:url('images/gallery/banana-quote.png'); background-size:cover; background-position:center;">
-          <img src="images/gallery/banana-quote.png"
+          style="background-image:url('/images/gallery/banana-quote.png'); background-size:cover; background-position:center;">
+          <img src="/images/gallery/banana-quote.png"
             alt="You will never reach the banana if you do not have the courage to climb."
             style="width:100%; height:100%; object-fit:cover; opacity:0; pointer-events:none;" aria-hidden="true">
           <div
@@ -273,15 +323,15 @@
             ★</div>
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/[0.08] transition"></div>
         </div>
-        <figcaption class="text-[12.5px] text-mute dark:text-[#a7a39d] mt-2 px-1">ini bagus buat motivasi akowkow, found
+        <figcaption class="text-[12.5px] text-mute dark:text-[#a7a39d] mt-2 px-1">good for motivation lol, found
           this in 2022</figcaption>
       </figure>
 
       <!-- 5 Centimeters Per Second Banner -->
-      <figure class="mason-item group cursor-pointer" data-cat="daily" data-full="images/gallery/1-centimeter-closer.png">
+      <figure class="mason-item group cursor-pointer" data-cat="daily" data-full="/images/gallery/1-centimeter-closer.png">
         <div class="rounded-[18px] overflow-hidden bg-[#ecebe8] dark:bg-[#1e1e1e] aspect-[16/9] relative"
-          style="background-image:url('images/gallery/1-centimeter-closer.png'); background-size:cover; background-position:center;">
-          <img src="images/gallery/1-centimeter-closer.png" alt="5 Centimeters per Second train cabin banner"
+          style="background-image:url('/images/gallery/1-centimeter-closer.png'); background-size:cover; background-position:center;">
+          <img src="/images/gallery/1-centimeter-closer.png" alt="5 Centimeters per Second train cabin banner"
             style="width:100%; height:100%; object-fit:cover; opacity:0; pointer-events:none;" aria-hidden="true">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/[0.08] transition"></div>
         </div>
@@ -291,22 +341,22 @@
 
       <!-- journal banner -->
       <figure class="mason-item group cursor-pointer" data-cat="daily"
-        data-full="images/articles/programmer-retail-hero.jpg">
+        data-full="/images/articles/programmer-retail-hero.jpg">
         <div class="rounded-[18px] overflow-hidden bg-[#ecebe8] dark:bg-[#1e1e1e] aspect-[16/9] relative"
-          style="background-image:url('images/articles/programmer-retail-hero.jpg'); background-size:cover; background-position:center;">
-          <img src="images/articles/programmer-retail-hero.jpg" alt="Banner jurnal Programmer retail: gimana bagi waktu"
+          style="background-image:url('/images/articles/programmer-retail-hero.jpg'); background-size:cover; background-position:center;">
+          <img src="/images/articles/programmer-retail-hero.jpg" alt="Journal banner: programmer retail, how to split time"
             style="width:100%; height:100%; object-fit:cover; opacity:0; pointer-events:none;" aria-hidden="true">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/[0.08] transition"></div>
         </div>
-        <figcaption class="text-[12.5px] text-mute dark:text-[#a7a39d] mt-2 px-1">me with anak2 C.K Mall Kokas
+        <figcaption class="text-[12.5px] text-mute dark:text-[#a7a39d] mt-2 px-1">me with the C.K kids at Mall Kokas
         </figcaption>
       </figure>
 
       <!-- Nastar & Night Session -->
-      <figure class="mason-item group cursor-pointer" data-cat="code" data-full="images/gallery/nastar-night.png">
+      <figure class="mason-item group cursor-pointer" data-cat="code" data-full="/images/gallery/nastar-night.png">
         <div class="rounded-[18px] overflow-hidden bg-[#ecebe8] dark:bg-[#1e1e1e] aspect-[3/4] relative"
-          style="background-image:url('images/gallery/nastar-night.png'); background-size:cover; background-position:center;">
-          <img src="images/gallery/nastar-night.png" alt="Nastar &amp; Night Session"
+          style="background-image:url('/images/gallery/nastar-night.png'); background-size:cover; background-position:center;">
+          <img src="/images/gallery/nastar-night.png" alt="Nastar &amp; Night Session"
             style="width:100%; height:100%; object-fit:cover; opacity:0; pointer-events:none;" aria-hidden="true">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/[0.08] transition"></div>
         </div>
@@ -316,10 +366,10 @@
 
       <!-- Windows Update Error -->
       <figure class="mason-item group cursor-pointer" data-cat="daily"
-        data-full="images/gallery/windows-update-error.png">
+        data-full="/images/gallery/windows-update-error.png">
         <div class="rounded-[18px] overflow-hidden bg-[#ecebe8] dark:bg-[#1e1e1e] aspect-[16/9] relative"
-          style="background-image:url('images/gallery/windows-update-error.png'); background-size:cover; background-position:center;">
-          <img src="images/gallery/windows-update-error.png" alt="Windows Update Failed"
+          style="background-image:url('/images/gallery/windows-update-error.png'); background-size:cover; background-position:center;">
+          <img src="/images/gallery/windows-update-error.png" alt="Windows Update Failed"
             style="width:100%; height:100%; object-fit:cover; opacity:0; pointer-events:none;" aria-hidden="true">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/[0.08] transition"></div>
         </div>
@@ -331,10 +381,10 @@
 
       <!-- CK / Plaza Indonesia -->
       <figure class="mason-item group cursor-pointer" data-cat="retail"
-        data-full="images/gallery/nugas-calvin-klein-plaza-indonesia.jpg">
+        data-full="/images/gallery/nugas-calvin-klein-plaza-indonesia.jpg">
         <div class="rounded-[18px] overflow-hidden bg-[#ecebe8] dark:bg-[#1e1e1e] aspect-[3/4] relative"
-          style="background-image:url('images/gallery/nugas-calvin-klein-plaza-indonesia.jpg'); background-size:cover; background-position:center;">
-          <img src="images/gallery/nugas-calvin-klein-plaza-indonesia.jpg" alt="Jeda antar shift — Plaza Indonesia"
+          style="background-image:url('/images/gallery/nugas-calvin-klein-plaza-indonesia.jpg'); background-size:cover; background-position:center;">
+          <img src="/images/gallery/nugas-calvin-klein-plaza-indonesia.jpg" alt="Break between shifts — Plaza Indonesia"
             style="width:100%; height:100%; object-fit:cover; opacity:0; pointer-events:none;" aria-hidden="true">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/[0.08] transition"></div>
         </div>
@@ -345,10 +395,10 @@
 
       <!-- Color grading -->
       <figure class="mason-item group cursor-pointer" data-cat="code"
-        data-full="images/gallery/color-grading-story-video.jpg">
+        data-full="/images/gallery/color-grading-story-video.jpg">
         <div class="rounded-[18px] overflow-hidden bg-[#ecebe8] dark:bg-[#1e1e1e] aspect-[3/4] relative"
-          style="background-image:url('images/gallery/color-grading-story-video.jpg'); background-size:cover; background-position:center;">
-          <img src="images/gallery/color-grading-story-video.jpg" alt="Color Grading to Produce better Video for Story"
+          style="background-image:url('/images/gallery/color-grading-story-video.jpg'); background-size:cover; background-position:center;">
+          <img src="/images/gallery/color-grading-story-video.jpg" alt="Color Grading to Produce better Video for Story"
             style="width:100%; height:100%; object-fit:cover; opacity:0; pointer-events:none;" aria-hidden="true">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/[0.08] transition"></div>
         </div>
@@ -357,10 +407,10 @@
       </figure>
 
       <!-- Prototyping at Figma -->
-      <figure class="mason-item group cursor-pointer" data-cat="code" data-full="images/gallery/prototyping-figma.png">
+      <figure class="mason-item group cursor-pointer" data-cat="code" data-full="/images/gallery/prototyping-figma.png">
         <div class="rounded-[18px] overflow-hidden bg-[#ecebe8] dark:bg-[#1e1e1e] aspect-[4/3] relative"
-          style="background-image:url('images/gallery/prototyping-figma.png'); background-size:cover; background-position:center;">
-          <img src="images/gallery/prototyping-figma.png" alt="prototyping at figma"
+          style="background-image:url('/images/gallery/prototyping-figma.png'); background-size:cover; background-position:center;">
+          <img src="/images/gallery/prototyping-figma.png" alt="prototyping at figma"
             style="width:100%; height:100%; object-fit:cover; opacity:0; pointer-events:none;" aria-hidden="true">
           <div class="absolute inset-0 bg-black/0 group-hover:bg-black/[0.08] transition"></div>
         </div>
@@ -370,45 +420,173 @@
 
     <!-- upload hint -->
     <div class="mt-14 border-t hairline pt-8 text-[13.5px] text-mute dark:text-[#a7a39d] leading-relaxed max-w-[560px]">
-      <p><strong class="text-ink dark:text-[#e9e6e2] font-[500]">Gallery akan diupdate secara berkala hehe</strong><br>
+      <p><strong class="text-ink dark:text-[#e9e6e2] font-[500]">Gallery will be updated regularly :)</strong><br>
         <code>Shot with 13MP single camera, mastering with Adobe Photoshop & Lightroom</code>.
       </p>
     </div>
 
     <footer
       class="border-t hairline mt-16 pt-8 flex flex-col sm:flex-row sm:justify-between gap-2 text-[12.5px] text-mute dark:text-[#7f7b75]">
-      <p>© <span id="year"></span> Kevin · <a href="/" class="hover:underline">kf-thedev.id</a> /gallery</p>
+      <p>© <span id="year"></span> Kevin · <a href="/" class="hover:underline">k-f.my.id</a> /gallery</p>
       <p>8 frames · Built with Node.JS + Tailwind utility</p>
     </footer>
   </main>
 
   <!-- lightbox -->
   <div id="lightbox" class="fixed inset-0 bg-[#141414]/90 backdrop-blur-sm hidden items-center justify-center z-50 p-6">
-    <button id="lbClose" class="absolute top-5 right-6 text-[#bdbdbd] text-[13px]">tutup ✕</button>
+    <button id="lbClose" class="absolute top-5 right-6 text-[#bdbdbd] text-[13px]">close ✕</button>
     <div id="lbContent" class="max-w-[860px] w-full text-center text-[#e9e6e2]">
       <div class="text-[13px] text-[#a7a39d] mb-3" id="lbCap"></div>
       <div id="lbPreview" class="rounded-2xl bg-[#1f1f1f] border border-[#2a2a2a] p-16 text-[14px] text-[#bdbdbd]">
-        preview foto — ganti src di gallery.html untuk foto asli</div>
+        photo preview — replace src in gallery page for the real photo</div>
     </div>
   </div>
 
   <script>
-    document.getElementById('year').textContent = new Date().getFullYear();
     // theme
-    const btn = document.getElementById('themeToggle');
-    const icon = document.getElementById('themeIcon');
-    function syncIcon() {
-      const isDark = document.documentElement.classList.contains('dark');
-      icon.textContent = isDark ? '●' : '○';
-    }
-    syncIcon();
-    if (btn) {
-      btn.onclick = () => {
-        document.documentElement.classList.toggle('dark');
-        localStorage.theme = document.documentElement.classList.contains('dark') ? 'dark' : 'light';
-        syncIcon();
-      };
-    }
+    (function () {
+      try {
+        var yearEl = document.getElementById('year');
+        if (yearEl) yearEl.textContent = new Date().getFullYear();
+      } catch (e) {}
+
+      var btn = document.getElementById('themeToggle');
+      var menu = document.getElementById('themeMenu');
+      if (!btn || !menu) return;
+
+      if (menu.parentElement !== document.body) {
+        document.body.appendChild(menu);
+      }
+
+      function isDark() {
+        return document.documentElement.classList.contains('dark');
+      }
+
+      function getTheme() {
+        try {
+          var stored = localStorage.getItem('theme');
+          if (stored === 'dark' || stored === 'light') return stored;
+        } catch (e) {}
+        return isDark() ? 'dark' : 'light';
+      }
+
+      function paintMenu() {
+        var dark = isDark();
+        menu.style.background = dark ? '#1d1d1d' : '#faf9f7';
+        menu.style.color = dark ? '#e9e6e2' : '#1a1a1a';
+        menu.style.border = '1px solid ' + (dark ? '#2a2a2a' : '#e6e3df');
+        menu.style.boxShadow = 'none';
+      }
+
+      function syncChecks() {
+        var theme = getTheme();
+        var opts = menu.querySelectorAll('.theme-opt');
+        for (var i = 0; i < opts.length; i++) {
+          var opt = opts[i];
+          var on = opt.getAttribute('data-theme') === theme;
+          var check = opt.querySelector('.theme-check');
+          if (check) check.hidden = !on;
+          opt.setAttribute('aria-checked', on ? 'true' : 'false');
+          opt.style.fontWeight = '400';
+        }
+      }
+
+      function applyTheme(mode) {
+        if (mode === 'dark') document.documentElement.classList.add('dark');
+        else document.documentElement.classList.remove('dark');
+        try { localStorage.setItem('theme', mode); } catch (e) {}
+        paintMenu();
+        syncChecks();
+      }
+
+      function positionMenu() {
+        var r = btn.getBoundingClientRect();
+        menu.style.visibility = 'hidden';
+        menu.style.display = 'block';
+        var mw = menu.offsetWidth || 160;
+        var mh = menu.offsetHeight || 90;
+        menu.style.visibility = 'visible';
+
+        var left = r.right - mw;
+        if (left < 12) left = 12;
+        if (left + mw > window.innerWidth - 12) left = window.innerWidth - mw - 12;
+
+        var top = r.bottom + 10;
+        if (top + mh > window.innerHeight - 12) {
+          top = Math.max(12, r.top - mh - 10);
+        }
+
+        menu.style.top = Math.round(top) + 'px';
+        menu.style.left = Math.round(left) + 'px';
+      }
+
+      var open = false;
+
+      function openMenu() {
+        paintMenu();
+        syncChecks();
+        menu.hidden = false;
+        menu.style.display = 'block';
+        positionMenu();
+        btn.setAttribute('aria-expanded', 'true');
+        open = true;
+      }
+
+      function closeMenu() {
+        menu.hidden = true;
+        menu.style.display = 'none';
+        btn.setAttribute('aria-expanded', 'false');
+        open = false;
+      }
+
+      btn.addEventListener('click', function (e) {
+        e.preventDefault();
+        e.stopPropagation();
+        if (open) closeMenu();
+        else openMenu();
+      });
+
+      var opts = menu.querySelectorAll('.theme-opt');
+      for (var i = 0; i < opts.length; i++) {
+        opts[i].addEventListener('click', function (e) {
+          e.preventDefault();
+          e.stopPropagation();
+          applyTheme(this.getAttribute('data-theme'));
+          closeMenu();
+        });
+        opts[i].addEventListener('mouseenter', function () {
+          this.style.background = isDark() ? 'rgba(255,255,255,0.06)' : 'rgba(0,0,0,0.04)';
+        });
+        opts[i].addEventListener('mouseleave', function () {
+          this.style.background = 'transparent';
+        });
+      }
+
+      document.addEventListener('click', function (e) {
+        if (!open) return;
+        if (btn.contains(e.target) || menu.contains(e.target)) return;
+        closeMenu();
+      });
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && open) closeMenu();
+      });
+
+      window.addEventListener('resize', function () {
+        if (open) positionMenu();
+      });
+      window.addEventListener('scroll', function () {
+        if (open) positionMenu();
+      }, true);
+
+      applyTheme(getTheme());
+      closeMenu();
+    })();
+
+
+
+
+
     // filter
     const filterBtns = document.querySelectorAll('.filter-btn');
     const items = document.querySelectorAll('#galleryGrid > figure');
@@ -426,7 +604,7 @@
     const lb = document.getElementById('lightbox');
     const lbCap = document.getElementById('lbCap');
     const lbPreview = document.getElementById('lbPreview');
-    const defaultPreview = 'preview foto — ganti src di gallery.html untuk foto asli';
+    const defaultPreview = 'photo preview — replace src in gallery page for the real photo';
     document.querySelectorAll('#galleryGrid figure').forEach(fig => {
       fig.addEventListener('click', () => {
         const full = fig.dataset.full || fig.querySelector('img')?.getAttribute('src');

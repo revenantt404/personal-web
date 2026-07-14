@@ -1,3 +1,19 @@
 {
-  "cleanUrls": true
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    { "source": "/journal", "destination": "/jurnal", "permanent": true },
+    { "source": "/journal.html", "destination": "/jurnal", "permanent": true },
+    { "source": "/projects", "destination": "/jurnal", "permanent": true },
+    { "source": "/tentang", "destination": "/about", "permanent": true },
+    { "source": "/about.html", "destination": "/about", "permanent": true },
+    { "source": "/gallery.html", "destination": "/gallery", "permanent": true },
+    { "source": "/rig.html", "destination": "/rig", "permanent": true }
+  ],
+  "rewrites": [
+    { "source": "/jurnal", "destination": "/jurnal/index.html" },
+    { "source": "/about", "destination": "/about/index.html" },
+    { "source": "/gallery", "destination": "/gallery/index.html" },
+    { "source": "/rig", "destination": "/rig/index.html" }
+  ]
 }

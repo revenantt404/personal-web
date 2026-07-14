@@ -4,10 +4,8 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kevin — Personal Web</title>
-  <meta name="description" content="Kevin — 19-year-old ENTJ-T who likes coding and building small tools from Jakarta.">
-
-  <!-- CSS utility CDN -->
+  <title>Journal — Kevin</title>
+  <meta name="description" content="Kevin's notes — retail staff by day, programmer by night.">
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
@@ -29,36 +27,36 @@
       }
     }
   </script>
-
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Instrument+Sans:wght@400;500&display=swap"
     rel="stylesheet">
-
   <style>
     body {
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
+      -webkit-font-smoothing: antialiased
     }
 
     ::selection {
       background: #1a1a1a;
-      color: #faf9f7;
+      color: #faf9f7
     }
 
     .dark ::selection {
       background: #faf9f7;
-      color: #1a1a1a;
+      color: #1a1a1a
     }
 
     .hairline {
-      border-color: #e6e3df;
+      border-color: #e6e3df
     }
 
     .dark .hairline {
-      border-color: #2a2a2a;
+      border-color: #2a2a2a
+    }
+
+    .prose p {
+      margin-bottom: 1em
     }
   </style>
   <script>
@@ -223,15 +221,13 @@
 </head>
 
 <body class="bg-paper text-ink dark:bg-[#141414] dark:text-[#e9e6e2] font-sans text-[16px] leading-relaxed">
-
-  <!-- NAV -->
     <header class="max-w-[720px] mx-auto px-6 md:px-0 pt-10 md:pt-16 pb-8">
     <div class="flex items-center justify-between gap-4">
       <a href="/" class="text-[18px] tracking-tight font-[500]">kevin.</a>
       <div class="flex items-center gap-3 md:gap-4 min-w-0">
         <nav class="flex items-center gap-5 md:gap-6 text-[14px] md:text-[14.5px] text-mute dark:text-[#a7a39d]">
           <a href="/about" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">About</a>
-          <a href="/jurnal" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Journal</a>
+          <a href="/jurnal" class="text-ink dark:text-[#e9e6e2]">Journal</a>
           <a href="/rig" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Rig</a>
           <a href="/gallery" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Gallery</a>
           <a href="/#kontak" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors">Contact</a>
@@ -258,152 +254,51 @@
   </div>
 
   <main class="max-w-[720px] mx-auto px-6 md:px-0 pb-24">
+    <p class="text-[13px] text-mute dark:text-[#a7a39d] mb-4">/jurnal — personal notes</p>
+    <h1 class="font-display text-[40px] md:text-[52px] leading-[1.06] font-[300]">Journal</h1>
+    <p class="mt-3 text-[16.5px] text-[#3a3a3a] dark:text-[#c5c2bc] max-w-[500px]">Short pieces from my head.
+      Bits of memory and experience from the real world.</p>
 
-    <!-- HERO -->
-    <section class="pt-10 md:pt-20 pb-16 md:pb-24">
-      <p class="text-[13px] text-mute dark:text-[#a7a39d] mb-5 tracking-wide">Jakarta — Indonesia · GMT+7</p>
-      <h1 class="font-display text-[36px] md:text-[52px] leading-[1.08] tracking-[-0.015em] font-[300] max-w-[600px]">
-        Sorting his head<br>
-        through code and <em class="font-display italic font-[300]">notes.</em>
-      </h1>
-      <p class="mt-7 text-[17px] leading-[1.7] text-[#3a3a3a] dark:text-[#c5c2bc] max-w-[500px]">
-        A 19-year-old guy from Jakarta who likes computers. This site holds stories, process notes, photos, and
-        small pieces of a life being built slowly.
-      </p>
+    <!-- list -->
+    <div class="mt-12 border-t hairline divide-y divide-[#e6e3df] dark:divide-[#2a2a2a]">
 
-      <div class="mt-9 flex flex-wrap items-center gap-5 text-[14px]">
-        <a href="/jurnal"
-          class="underline underline-offset-4 decoration-[#c9c5c0] hover:decoration-ink dark:decoration-[#3a3a3a] dark:hover:decoration-[#e9e6e2] transition-all">Start
-          with the journal →</a>
-        <span class="text-mute dark:text-[#7a7772] hidden sm:inline">·</span>
-        <a href="mailto:kevin@email.com"
-          class="text-mute dark:text-[#a7a39d] hover:text-ink dark:hover:text-[#e9e6e2]">kevin@email.com</a>
-      </div>
-
-      <div class="mt-8 flex items-center gap-3 text-[12.5px]">
-        <span class="px-3 py-1.5 rounded-full border hairline text-mute dark:text-[#a7a39d]">19 y/o</span>
-        <span class="px-3 py-1.5 rounded-full border hairline text-mute dark:text-[#a7a39d]">ENTJ-T</span>
-        <span class="px-3 py-1.5 rounded-full border hairline text-mute dark:text-[#a7a39d]">Jakarta</span>
-      </div>
-    </section>
-
-    <!-- TENTANG -->
-    <section id="tentang" class="border-t hairline pt-14">
-      <div class="grid md:grid-cols-[140px_1fr] gap-6 md:gap-10">
-        <h2 class="text-[13px] tracking-wider text-mute dark:text-[#8f8b85] uppercase mt-1">About</h2>
-        <div class="text-[16.5px] leading-[1.75] text-[#2b2b2b] dark:text-[#d1cdc7] space-y-4 max-w-[520px]">
-          <p>
-            Short version: Kevin, 19, Jakarta. Nothing special — just someone who has been curious about computers,
-            the internet, and technical things that can be made cleaner since he was little.
-          </p>
-          <p class="text-mute dark:text-[#a7a39d]">
-            This is only a teaser. The longer version is on a dedicated page — more like a personal essay about
-            internet cafes, keyboards, and a mind learning to get organized.
-          </p>
-          <div class="pt-3 text-[14px] text-mute dark:text-[#a7a39d] leading-relaxed border-t hairline mt-2">
-            <div class="grid grid-cols-1 sm:grid-cols-2 gap-x-8 gap-y-2 mt-3">
-              <div><span class="text-ink dark:text-[#e9e6e2]">Profile</span><br>19 y/o · ENTJ-T</div>
-              <div><span class="text-ink dark:text-[#e9e6e2]">Interest</span><br>Code · systems · video</div>
-              <div class="sm:col-span-2 pt-3">
-                <a href="/about"
-                  class="underline underline-offset-4 decoration-[#c9c5c0] hover:decoration-ink dark:decoration-[#444] dark:hover:decoration-[#e9e6e2]">Read
-                  the full about page →</a>
-              </div>
-            </div>
-          </div>
+      <article class="py-9">
+        <div class="flex items-center gap-3 text-[11.5px] text-mute dark:text-[#8f8b85] uppercase tracking-wider">
+          <span>6 Jul 2026</span>
+          <span>·</span>
+          <span>Retail · Jakarta</span>
         </div>
-      </div>
-    </section>
+        <h2 class="text-[22px] md:text-[26px] tracking-tight mt-2 font-display">Time dilation at work.
+        </h2>
+        <p class="mt-3 text-[15.5px] leading-[1.75] text-[#2b2b2b] dark:text-[#d1cdc7] max-w-[580px]">
+          Finding small pockets of time between work, fatigue, the commute home, and a head that is still noisy.
+          Not about looking productive. Just about keeping a rhythm so it does not break for too long.
+        </p>
+        <div class="mt-4 text-[13px] text-mute dark:text-[#a7a39d]">4 min read · <a href="/jurnal/timedilation.html"
+            class="underline underline-offset-4">read →</a></div>
+      </article>
 
-
-    <!-- JURNAL TEASER -->
-    <section id="jurnal" class="border-t hairline pt-14 mt-14">
-      <div class="grid md:grid-cols-[140px_1fr] gap-6 md:gap-10">
-        <h2 class="text-[13px] tracking-wider text-mute dark:text-[#8f8b85] uppercase mt-1">Journal</h2>
-        <div class="w-full space-y-0 max-w-[520px]">
-          <article class="py-5 border-b hairline first:pt-0">
-            <div class="text-[11.5px] text-mute dark:text-[#8f8b85] uppercase tracking-wider">6 Jul 2026 · Note</div>
-            <h3 class="text-[18px] tracking-tight mt-1"><a href="/jurnal/timedilation.html"
-                class="hover:underline underline-offset-4">How I split time for coding</a></h3>
-            <p class="text-[14.5px] text-mute dark:text-[#a7a39d] mt-1 leading-relaxed">Finding small pockets of time between work, fatigue, and a noisy head.</p>
-          </article>
-          <article class="py-5 border-b hairline">
-            <div class="text-[11.5px] text-mute dark:text-[#8f8b85] uppercase tracking-wider">1 Jan 2026 · Note</div>
-            <h3 class="text-[18px] tracking-tight mt-1"><a href="/jurnal/1-centimeter-closer.html"
-                class="hover:underline underline-offset-4">1 Centimeter closer.</a></h3>
-            <p class="text-[14.5px] text-mute dark:text-[#a7a39d] mt-1 leading-relaxed">But just looking at her made my heart pound and hearing her voice made it soar.</p>
-          </article>
+      <article class="py-9">
+        <div class="flex items-center gap-3 text-[11.5px] text-mute dark:text-[#8f8b85] uppercase tracking-wider">
+          <span>1 Jan 2026</span>
+          <span>·</span>
+          <span>Note · Jakarta</span>
         </div>
-      </div>
-      <div class="md:ml-[140px] md:pl-10 mt-6 flex flex-wrap items-center gap-4 text-[13.5px]">
-        <a href="/jurnal"
-          class="underline underline-offset-4 decoration-[#c9c5c0] hover:decoration-ink dark:decoration-[#444] dark:hover:decoration-[#e9e6e2]">Read
-          all notes →</a>
-        <span class="text-mute dark:text-[#7a7772]">·</span>
-        <a href="/gallery" class="text-mute dark:text-[#a7a39d] hover:text-ink">Gallery →</a>
-      </div>
-    </section>
+        <h2 class="text-[22px] md:text-[26px] tracking-tight mt-2 font-display">1 Centimeter closer.
+        </h2>
+        <p class="mt-3 text-[15.5px] leading-[1.75] text-[#2b2b2b] dark:text-[#d1cdc7] max-w-[580px]">
+          "But just looking at her made my heart pound and hearing her voice made it soar."
+        </p>
+        <div class="mt-4 text-[13px] text-mute dark:text-[#a7a39d]">3 min read · <a
+            href="/jurnal/1-centimeter-closer.html" class="underline underline-offset-4">read →</a></div>
+      </article>
 
+    </div>
 
-    <!-- SERVICES / NOW -->
-    <section class="border-t hairline pt-14 mt-14">
-      <div class="grid md:grid-cols-[140px_1fr] gap-6 md:gap-10">
-        <h2 class="text-[13px] tracking-wider text-mute dark:text-[#8f8b85] uppercase mt-1">Now</h2>
-        <div class="max-w-[520px] text-[15.5px] text-[#2b2b2b] dark:text-[#d1cdc7] leading-relaxed">
-          <ul class="space-y-3">
-            <li>• Working at a store</li>
-            <li>• Freelance coding at home</li>
-            <li>• Editing video & photos for stories</li>
-          </ul>
-          <div class="mt-5 border-t hairline pt-5 text-[14.5px] text-mute dark:text-[#a7a39d]">
-            Latest note: <a href="/jurnal/timedilation.html"
-              class="text-ink dark:text-[#e9e6e2] underline underline-offset-4 decoration-[#d5d2cd] hover:decoration-ink dark:decoration-[#444]">How I
-              split time for coding</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- KONTAK -->
-    <section id="kontak" class="border-t hairline pt-14 mt-14">
-      <div class="grid md:grid-cols-[140px_1fr] gap-6 md:gap-10">
-        <h2 class="text-[13px] tracking-wider text-mute dark:text-[#8f8b85] uppercase mt-1">Contact</h2>
-        <div class="max-w-[520px]">
-          <p class="text-[17px] leading-[1.7] text-[#2b2b2b] dark:text-[#d1cdc7] mb-6">
-            Want a light, chill chat?<br>
-            Just send a message. I usually reply at night.
-          </p>
-
-          <div class="flex flex-wrap items-center gap-4 text-[14px]">
-            <a href="http://wa.me/6289682116872" target="_blank"
-              class="underline underline-offset-4 decoration-[#c9c5c0] hover:decoration-ink dark:decoration-[#444] dark:hover:decoration-[#e9e6e2]">
-              WhatsApp chat →
-            </a>
-            <span class="text-mute dark:text-[#7a7772]">·</span>
-            <a href="mailto:kevin@email.com?subject=Hi%20Kevin%20from%20your%20website"
-              class="text-mute dark:text-[#a7a39d] hover:text-ink dark:hover:text-[#e9e6e2]">
-              Send email
-            </a>
-          </div>
-
-          <div class="mt-8 text-[14px] text-mute dark:text-[#a7a39d] space-y-1.5">
-            <p>Usually online at night. If I have not replied, I am probably at work.</p>
-            <p class="pt-2">
-              <a href="#" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors mr-4">GitHub</a>
-              <a href="#" class="hover:text-ink dark:hover:text-[#e9e6e2] transition-colors mr-4">Instagram</a>
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- FOOTER -->
-    <footer
-      class="border-t hairline mt-16 pt-8 flex flex-col sm:flex-row sm:justify-between gap-2 text-[12.5px] text-mute dark:text-[#7f7b75]">
-      <p>© <span id="year"></span> Kevin · k-f.my.id</p>
-      <p>Built with Node.JS + Tailwind utility</p>
+    <footer class="border-t hairline mt-12 pt-8 text-[12.5px] text-mute dark:text-[#7f7b75] flex justify-between">
+      <a href="/" class="hover:text-ink dark:hover:text-[#e9e6e2]">← k-f.my.id</a>
+      <span>journal · 2 notes</span>
     </footer>
-
   </main>
 
   <script>
