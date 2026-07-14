@@ -2473,9 +2473,7 @@
         menu.style.background = dark ? '#1d1d1d' : '#faf9f7';
         menu.style.color = dark ? '#e9e6e2' : '#1a1a1a';
         menu.style.border = '1px solid ' + (dark ? '#2a2a2a' : '#e6e3df');
-        menu.style.boxShadow = dark
-          ? '0 16px 48px rgba(0,0,0,0.5)'
-          : '0 12px 40px rgba(0,0,0,0.14)';
+        menu.style.boxShadow = 'none';
       }
 
       function syncChecks() {
@@ -2487,7 +2485,7 @@
           var check = opt.querySelector('.theme-check');
           if (check) check.hidden = !on;
           opt.setAttribute('aria-checked', on ? 'true' : 'false');
-          opt.style.fontWeight = on ? '600' : '400';
+          opt.style.fontWeight = '400';
         }
       }
 
